@@ -9,98 +9,201 @@
         :root { --primary: #004a99; --secondary: #00d4ff; --dark: #0f172a; --text: #334155; --danger: #e11d48; --success: #10b981; --border: #e2e8f0; }
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: 'Inter', sans-serif; background-color: #f1f5f9; color: var(--text); line-height: 1.8; }
+        
+        /* Navigation */
         nav { background: var(--primary); color: white; padding: 15px 5%; display: flex; justify-content: space-between; position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
         .logo { font-weight: bold; text-decoration: none; color: white; font-size: 1.2rem; }
         .back-link { color: white; text-decoration: none; font-size: 0.8rem; border: 1px solid white; padding: 5px 15px; border-radius: 6px; }
+
+        /* Layout */
         .main-wrapper { max-width: 1200px; margin: 30px auto; display: grid; grid-template-columns: 1fr 350px; gap: 30px; padding: 0 20px; }
         .container { background: white; border-radius: 20px; box-shadow: 0 4px 20px rgba(0,0,0,0.05); overflow: hidden; }
         .content { padding: 40px; }
-        h1 { color: var(--dark); font-size: 2rem; line-height: 1.2; margin-bottom: 20px; letter-spacing: -1px; }
+        
+        /* Typography */
+        h1 { color: var(--dark); font-size: 2.2rem; line-height: 1.2; margin: 20px 0; letter-spacing: -1px; }
+        h2 { color: var(--primary); margin: 30px 0 15px; font-size: 1.6rem; border-left: 5px solid var(--secondary); padding-left: 15px; }
+        .badge { background: #fee2e2; color: #991b1b; padding: 6px 16px; border-radius: 30px; font-weight: 700; font-size: 0.75rem; text-transform: uppercase; }
+        .meta { color: #94a3b8; font-size: 0.9rem; margin-bottom: 30px; border-bottom: 1px solid #f1f5f9; padding-bottom: 20px; }
+
+        /* Sidebar Widgets */
         .sidebar { display: flex; flex-direction: column; gap: 30px; }
         .sidebar-widget { background: white; padding: 25px; border-radius: 20px; box-shadow: 0 4px 20px rgba(0,0,0,0.05); position: relative; }
         .widget-title { font-size: 1.1rem; font-weight: 700; color: var(--dark); margin-bottom: 15px; padding-bottom: 10px; border-bottom: 2px solid var(--secondary); display: inline-block; }
+        
+        /* Search System */
+        .search-box { position: relative; }
         .search-box input { width: 100%; padding: 12px; border: 1px solid var(--border); border-radius: 8px; font-size: 0.9rem; }
-        #searchSuggestions { background: white; position: absolute; width: 100%; border: 1px solid #ddd; display: none; z-index: 100; border-radius: 8px; top: 50px; box-shadow: 0 10px 20px rgba(0,0,0,0.1); }
-        .category-list, .popular-list { list-style: none; }
-        .category-list a { text-decoration: none; color: var(--text); font-size: 0.9rem; display: flex; justify-content: space-between; padding: 10px; background: #f8fafc; margin-bottom: 8px; border-radius: 8px; }
-        .cat-count { font-size: 0.75rem; background: #cbd5e1; padding: 2px 8px; border-radius: 10px; }
-        .popular-list { counter-reset: my-counter; padding: 0; }
+        #searchSuggestions { background: white; position: absolute; width: 100%; border: 1px solid #ddd; display: none; z-index: 100; border-radius: 8px; box-shadow: 0 10px 20px rgba(0,0,0,0.1); top: 52px; }
+
+        /* Category & Ranking Styles */
+        .category-list, .popular-list { list-style: none; padding: 0; }
+        .category-list a { text-decoration: none; color: var(--text); font-size: 0.9rem; display: flex; justify-content: space-between; padding: 10px; background: #f8fafc; margin-bottom: 8px; border-radius: 8px; transition: 0.3s; }
+        .category-list a:hover { background: var(--primary); color: white; }
+        .cat-count { font-size: 0.75rem; background: #cbd5e1; padding: 2px 8px; border-radius: 10px; color: var(--dark); }
+        
+        .popular-list { counter-reset: item; }
         .popular-list li { position: relative; padding: 10px 10px 10px 45px; border-bottom: 1px solid #f1f5f9; }
-        .popular-list li::before { counter-increment: my-counter; content: counter(my-counter); position: absolute; left: 0; top: 12px; width: 30px; height: 30px; background: var(--primary); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 0.8rem; }
-        .popular-list a { text-decoration: none; color: var(--dark); font-weight: 600; font-size: 0.9rem; }
-        .smart-box { background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); color: white; padding: 25px; border-radius: 20px; margin: 25px 0; }
-        .grid-features { display: grid; grid-template-columns: repeat(auto-fit, minmax(80px, 1fr)); gap: 10px; }
-        .f-item { background: rgba(255,255,255,0.08); padding: 10px; border-radius: 10px; text-align: center; font-size: 0.7rem; border: 1px solid rgba(255,255,255,0.1); }
-        .pc-container { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin: 25px 0; }
-        .pc-box { padding: 15px; border-radius: 12px; font-size: 0.85rem; }
+        .popular-list li::before { counter-increment: item; content: counter(item); position: absolute; left: 0; top: 12px; width: 32px; height: 32px; background: var(--primary); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 0.8rem; }
+        .popular-list a { text-decoration: none; color: var(--dark); font-weight: 600; font-size: 0.9rem; display: block; }
+        .popular-list small { color: #94a3b8; font-size: 0.75rem; }
+
+        /* Review Components */
+        .smart-box { background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); color: white; padding: 30px; border-radius: 20px; margin: 25px 0; }
+        .grid-features { display: grid; grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); gap: 12px; }
+        .f-item { background: rgba(255,255,255,0.08); padding: 12px; border-radius: 12px; text-align: center; font-size: 0.8rem; border: 1px solid rgba(255,255,255,0.1); }
+        .pc-container { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin: 30px 0; }
+        .pc-box { padding: 20px; border-radius: 16px; font-size: 0.9rem; }
         .pros { background: #f0fdf4; border: 1px solid #bbf7d0; }
         .cons { background: #fff1f2; border: 1px solid #fecdd3; }
-        .cta-price { text-align: center; background: #ee4d2d; color: white; padding: 30px; border-radius: 20px; margin-top: 20px; }
-        .btn-link { display: inline-block; background: white; color: #ee4d2d; padding: 10px 25px; border-radius: 8px; text-decoration: none; font-weight: 700; margin-top: 10px; }
+        .target-box { background: #f0f9ff; border: 1px solid #bae6fd; padding: 25px; border-radius: 20px; margin: 35px 0; }
+        .cta-price { text-align: center; background: #ee4d2d; color: white; padding: 40px; border-radius: 20px; margin-top: 50px; }
+        .btn-link { display: inline-block; background: white; color: #ee4d2d; padding: 12px 35px; border-radius: 10px; text-decoration: none; font-weight: 700; margin-top: 15px; }
+
         footer { text-align: center; padding: 40px; color: #94a3b8; font-size: 0.8rem; background: white; border-top: 1px solid var(--border); margin-top: 40px; }
         @media (max-width: 992px) { .main-wrapper { grid-template-columns: 1fr; } }
     </style>
 </head>
 <body>
-<nav><a href="index.html" class="logo">TECH-NO-LOGY</a><a href="index.html" class="back-link">Kembali</a></nav>
+
+<nav>
+    <a href="index.html" class="logo">TECH-NO-LOGY</a>
+    <a href="index.html" class="back-link">Kembali</a>
+</nav>
+
 <div class="main-wrapper">
-    <div class="container">
+    <article class="container">
         <div class="content">
             <span class="badge">Review Mendalam</span>
             <h1>TWS 100 Ribuan Punya Layar Sentuh? Review KiiP Wireless DTS16: Si Perusak Harga Pasar!</h1>
-            <p>Di harga <strong>Rp 165.000</strong>, <strong>KiiP Wireless DTS16</strong> membawa fitur layar sentuh pintar. Inilah hasil uji kami.</p>
+            <div class="meta">Oleh: Lab Tech-no-Logy | Update: 8 Februari 2026</div>
+
+            <p>Di harga <strong>Rp 165.000</strong>, <strong>KiiP Wireless DTS16</strong> menawarkan fitur yang biasanya hanya ada di produk jutaan: sebuah layar sentuh pintar di casenya. Kami telah menguji setiap aspeknya untuk membantu Bos memutuskan apakah TWS ini layak dibeli.</p>
+
             <div class="smart-box">
-                <h3 style="color: var(--secondary); margin-bottom: 15px; font-size: 1rem;">✨ Fitur Smart Screen Case</h3>
+                <h3 style="color: var(--secondary); margin-bottom: 15px; font-size: 1.1rem;">✨ Fitur Smart Screen Case</h3>
                 <div class="grid-features">
-                    <div class="f-item">🎵 Musik</div><div class="f-item">🎭 EQ</div><div class="f-item">📸 Kamera</div>
-                    <div class="f-item">🔍 Find</div><div class="f-item">🔋 Baterai</div><div class="f-item">⏰ Jam</div>
+                    <div class="f-item">🎵 Musik & Vol</div>
+                    <div class="f-item">🎭 5 EQ Mode</div>
+                    <div class="f-item">📸 Kamera</div>
+                    <div class="f-item">🔍 Find Buds</div>
+                    <div class="f-item">🔋 Cek Baterai</div>
+                    <div class="f-item">⏰ Jam/Timer</div>
                 </div>
             </div>
-            <h2>Bedah Kualitas</h2>
-            <p><strong>1. Desain:</strong> Futuristik dengan layar LCD, tapi material plastik terasa ringan.</p>
-            <p><strong>2. Suara:</strong> Driver 13mm memberikan bass pas untuk pop, meski treble agak tajam di volume tinggi.</p>
-            <p><strong>3. Koneksi:</strong> Bluetooth 5.4 sangat stabil dan minim delay.</p>
-            <div class="pc-container">
-                <div class="pc-box pros"><strong>✅ Kelebihan</strong><ul style="padding-left:15px; font-size:0.75rem;"><li>Layar LCD Inovatif</li><li>Harga Rp 165rb</li></ul></div>
-                <div class="pc-box cons"><strong>❌ Kekurangan</strong><ul style="padding-left:15px; font-size:0.75rem;"><li>Bahan Ringkih</li><li>Baterai 4.5 Jam</li></ul></div>
+
+            <h2>Bedah Kualitas KiiP DTS16</h2>
+            <div class="review-point">
+                <p><strong>1. Desain & Build Quality:</strong> Secara estetika futuristik dengan layar LCD, namun material plastiknya terasa sangat ringan (66 gram). Bos harus hati-hati dengan engsel casenya agar tetap awet.</p>
+                <p style="margin-top:15px;"><strong>2. Kualitas Suara (Audio):</strong> Driver 13mm memberikan bass pas untuk pop. Kekurangannya, pada volume 100%, treble terasa sedikit tajam.</p>
+                <p style="margin-top:15px;"><strong>3. Konektivitas & Mic:</strong> Bluetooth 5.4 sangat stabil. Fitur ENC cukup membantu menyaring suara angin, meski mic terdengar agak tipis.</p>
             </div>
-            <div class="cta-price"><span style="font-size: 1.8rem; font-weight: 800; display: block;">Rp 165.000</span><a href="#" class="btn-link">Beli Sekarang</a></div>
+
+            <div class="target-box">
+                <h3 style="font-size: 1.1rem; margin-bottom: 10px;">🎯 Siapa yang Cocok Membeli Ini?</h3>
+                <p>TWS ini sangat cocok bagi <strong>Pelajar, Mahasiswa, atau Pencari Gadget Unik</strong> yang mengutamakan gaya dengan budget minimalis.</p>
+            </div>
+
+            <div class="pc-container">
+                <div class="pc-box pros">
+                    <strong style="color: var(--success);">✅ Kelebihan</strong>
+                    <ul style="padding-left: 15px; font-size: 0.8rem; margin-top: 10px;">
+                        <li>Layar LCD Inovatif</li>
+                        <li>Bluetooth 5.4 Stabil</li>
+                        <li>Harga Murah (165rb)</li>
+                    </ul>
+                </div>
+                <div class="pc-box cons">
+                    <strong style="color: var(--danger);">❌ Kekurangan</strong>
+                    <ul style="padding-left: 15px; font-size: 0.8rem; margin-top: 10px;">
+                        <li>Bahan Plastik Ringkih</li>
+                        <li>Baterai hanya 4.5 Jam</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="cta-price">
+                <span style="font-size: 2.2rem; font-weight: 800; display: block;">Rp 165.000</span>
+                <a href="#" class="btn-link">Beli Sekarang</a>
+            </div>
         </div>
-    </div>
+    </article>
+
     <aside class="sidebar">
-        <div class="sidebar-widget"><h3 class="widget-title">Cari Berita</h3><div class="search-box"><input type="text" id="searchInput" placeholder="Cari judul..." onkeyup="searchNews()"><div id="searchSuggestions"></div></div></div>
-        <div class="sidebar-widget"><h3 class="widget-title">Kategori</h3><ul class="category-list" id="categoryList"></ul></div>
-        <div class="sidebar-widget"><h3 class="widget-title">Paling Banyak Dibaca</h3><ol class="popular-list" id="popularNews"></ol></div>
+        <div class="sidebar-widget">
+            <h3 class="widget-title">Cari Berita</h3>
+            <div class="search-box">
+                <input type="text" id="searchInput" placeholder="Ketik judul berita..." onkeyup="searchNews()">
+                <div id="searchSuggestions"></div>
+            </div>
+        </div>
+
+        <div class="sidebar-widget">
+            <h3 class="widget-title">Kategori</h3>
+            <ul class="category-list" id="categoryList"></ul>
+        </div>
+
+        <div class="sidebar-widget">
+            <h3 class="widget-title">Paling Banyak Dibaca</h3>
+            <ol class="popular-list" id="popularNews"></ol>
+        </div>
     </aside>
 </div>
-<footer>&copy; 2026 Tech-no-Logy</footer>
+
+<footer>&copy; 2026 Tech-no-Logy | Referensi Digital Berdasarkan Fakta</footer>
+
 <script>
-const newsDatabase = [{ title: "TWS 100 Ribuan Punya Layar Sentuh? Review KiiP Wireless DTS16: Si Perusak Harga Pasar!", link: "audio-080226.html", category: "Audio" }];
+// 1. DATABASE BERITA (Otomatis menyesuaikan Kategori, Search, dan Populer)
+const newsDatabase = [
+    { 
+        title: "TWS 100 Ribuan Punya Layar Sentuh? Review KiiP Wireless DTS16: Si Perusak Harga Pasar!", 
+        link: "audio-080226.html", 
+        category: "Audio" 
+    }
+    // Tambahkan berita baru di sini nanti
+];
+
+// 2. DAFTAR KATEGORI RESMI
 const officialCategories = ["Audio", "Smartphone", "Tablet", "Tamplate"];
+
 function updateSidebar() {
-    const catList = document.getElementById('categoryList'); catList.innerHTML = "";
+    // Update Kategori (Hanya tampil jika ada beritanya)
+    const catList = document.getElementById('categoryList');
+    catList.innerHTML = "";
     officialCategories.forEach(cat => {
         const count = newsDatabase.filter(n => n.category === cat).length;
         if (count > 0) catList.innerHTML += `<li><a href="#">${cat} <span class="cat-count">${count}</span></a></li>`;
     });
-    let page = window.location.pathname.split("/").pop() || "audio-080226.html";
-    localStorage.setItem(page, (parseInt(localStorage.getItem(page)) || 0) + 1);
-    const popList = document.getElementById('popularNews'); popList.innerHTML = "";
-    newsDatabase.map(n => ({ ...n, v: parseInt(localStorage.getItem(n.link)) || 0 })).sort((a, b) => b.v - a.v).forEach(news => {
-        popList.innerHTML += `<li><a href="${news.link}">${news.title}</a><br><small>${news.v} Pembaca</small></li>`;
-    });
+
+    // Update Populer (Ranking berdasarkan Klik Lokal)
+    const pageKey = window.location.pathname.split("/").pop() || "audio-080226.html";
+    localStorage.setItem(pageKey, (parseInt(localStorage.getItem(pageKey)) || 0) + 1);
+
+    const popList = document.getElementById('popularNews');
+    popList.innerHTML = "";
+    newsDatabase.map(n => ({ ...n, v: parseInt(localStorage.getItem(n.link)) || 0 }))
+        .sort((a, b) => b.v - a.v)
+        .forEach(n => {
+            if(n.v > 0) popList.innerHTML += `<li><a href="${n.link}">${n.title}</a><small>${n.v} Pembaca</small></li>`;
+        });
 }
+
+// 3. FUNGSI PENCARIAN (Hanya judul yang ada di database)
 function searchNews() {
     let input = document.getElementById('searchInput').value.toLowerCase();
-    let box = document.getElementById('searchSuggestions'); box.innerHTML = "";
+    let box = document.getElementById('searchSuggestions');
+    box.innerHTML = "";
     if (input.length > 0) {
         let matches = newsDatabase.filter(n => n.title.toLowerCase().includes(input));
         if (matches.length > 0) {
             box.style.display = "block";
-            matches.forEach(m => { box.innerHTML += `<a href="${m.link}" style="display:block; padding:10px; text-decoration:none; color:#333; font-size:0.85rem; border-bottom:1px solid #eee;">${m.title}</a>`; });
+            matches.forEach(m => {
+                box.innerHTML += `<a href="${m.link}" style="display:block; padding:10px; text-decoration:none; color:#333; font-size:0.85rem; border-bottom:1px solid #eee;">${m.title}</a>`;
+            });
         } else box.style.display = "none";
     } else box.style.display = "none";
 }
+
 window.onload = updateSidebar;
 </script>
 </body>
