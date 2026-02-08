@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Review Lengkap KiiP DTS16 - Tech-no-Logy</title>
+    <title>Review KiiP DTS16 - Tech-no-Logy</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
     
     <style>
@@ -15,99 +15,107 @@
         --tiktok: #000000;
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Inter', sans-serif; background-color: var(--bg); color: var(--text); line-height: 1.8; }
+        body { font-family: 'Inter', sans-serif; background-color: var(--bg); color: var(--text); line-height: 1.6; }
         
         /* Navbar */
-        nav { background: var(--primary); color: white; padding: 15px 5%; display: flex; justify-content: space-between; position: sticky; top: 0; z-index: 1000; box-shadow: 0 4px 20px rgba(0,0,0,0.1); }
-        .logo { font-weight: 800; text-decoration: none; color: white; font-size: 1.4rem; letter-spacing: -0.5px; }
-        .back-link { color: white; text-decoration: none; font-size: 0.85rem; border: 1px solid rgba(255,255,255,0.3); padding: 8px 18px; border-radius: 50px; transition: 0.3s; }
-        .back-link:hover { background: white; color: var(--primary); }
+        nav { background: var(--primary); color: white; padding: 15px 5%; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 1000; box-shadow: 0 4px 20px rgba(0,0,0,0.1); }
+        .logo { font-weight: 800; text-decoration: none; color: white; font-size: 1.2rem; letter-spacing: -0.5px; }
+        .back-link { color: white; text-decoration: none; font-size: 0.8rem; border: 1px solid rgba(255,255,255,0.3); padding: 8px 15px; border-radius: 50px; transition: 0.3s; }
+        
+        /* Layout Grid Utama */
+        .main-wrapper { max-width: 1200px; margin: 30px auto; display: grid; grid-template-columns: 1fr 350px; gap: 30px; padding: 0 20px; }
+        
+        /* KONTEN UTAMA */
+        .container { background: white; border-radius: 20px; box-shadow: 0 5px 20px rgba(0,0,0,0.03); overflow: hidden; border: 1px solid var(--border); }
+        .content { padding: 40px; }
+        
+        /* Tipografi */
+        h1 { color: var(--dark); font-size: 2rem; line-height: 1.3; margin: 15px 0; font-weight: 800; letter-spacing: -1px; }
+        h2 { color: var(--dark); margin: 30px 0 15px; font-size: 1.4rem; font-weight: 700; border-left: 5px solid var(--secondary); padding-left: 15px; }
+        h3 { font-size: 1.1rem; color: var(--primary); margin-bottom: 15px; font-weight: 700; }
+        p { margin-bottom: 15px; text-align: justify; font-size: 1rem; color: #475569; }
+        
+        .badge { background: #e0f2fe; color: var(--primary); padding: 5px 15px; border-radius: 50px; font-weight: 700; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1px; display: inline-block; }
+        .meta { display: flex; align-items: center; gap: 15px; color: #64748b; font-size: 0.85rem; margin-bottom: 30px; border-bottom: 1px solid var(--border); padding-bottom: 20px; }
+        
+        /* Smart Box Feature */
+        .smart-box { background: linear-gradient(135deg, #0f172a 0%, #334155 100%); color: white; padding: 25px; border-radius: 20px; margin: 25px 0; box-shadow: 0 15px 30px rgba(15, 23, 42, 0.15); }
+        .grid-features { display: grid; grid-template-columns: repeat(auto-fit, minmax(90px, 1fr)); gap: 10px; margin-top: 15px; }
+        .f-item { background: rgba(255,255,255,0.1); padding: 10px; border-radius: 12px; text-align: center; font-size: 0.75rem; border: 1px solid rgba(255,255,255,0.1); }
 
-        /* Layout Grid */
-        .main-wrapper { max-width: 1200px; margin: 40px auto; display: grid; grid-template-columns: 1fr 360px; gap: 40px; padding: 0 20px; }
-        
-        /* Konten Utama */
-        .container { background: white; border-radius: 24px; box-shadow: 0 10px 40px rgba(0,0,0,0.03); overflow: hidden; border: 1px solid var(--border); }
-        .content { padding: 50px; }
-        
-        /* Tipografi Review */
-        h1 { color: var(--dark); font-size: 2.4rem; line-height: 1.2; margin: 25px 0; letter-spacing: -1px; font-weight: 800; }
-        h2 { color: var(--dark); margin: 40px 0 20px; font-size: 1.6rem; font-weight: 700; border-left: 6px solid var(--secondary); padding-left: 20px; }
-        h3 { font-size: 1.2rem; color: var(--primary); margin-bottom: 15px; font-weight: 700; }
-        p { margin-bottom: 20px; text-align: justify; font-size: 1.05rem; }
-        
-        .badge { background: #e0f2fe; color: var(--primary); padding: 8px 20px; border-radius: 50px; font-weight: 700; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; display: inline-block; }
-        .meta { display: flex; align-items: center; gap: 15px; color: #64748b; font-size: 0.9rem; margin-bottom: 40px; border-bottom: 1px solid var(--border); padding-bottom: 25px; }
-        
-        /* Kotak Spesial */
-        .highlight-box { background: #f0f9ff; border: 1px solid #bae6fd; padding: 30px; border-radius: 20px; margin: 30px 0; }
-        .smart-box { background: linear-gradient(135deg, #0f172a 0%, #334155 100%); color: white; padding: 35px; border-radius: 24px; margin: 35px 0; box-shadow: 0 20px 40px rgba(15, 23, 42, 0.2); }
-        .grid-features { display: grid; grid-template-columns: repeat(auto-fit, minmax(110px, 1fr)); gap: 15px; margin-top: 20px; }
-        .f-item { background: rgba(255,255,255,0.1); padding: 15px; border-radius: 16px; text-align: center; font-size: 0.85rem; border: 1px solid rgba(255,255,255,0.15); backdrop-filter: blur(5px); }
-
-        /* Pro Kontra */
-        .pc-container { display: grid; grid-template-columns: 1fr 1fr; gap: 25px; margin: 40px 0; }
-        .pc-box { padding: 30px; border-radius: 20px; font-size: 0.95rem; }
+        /* Pro Kontra Box */
+        .pc-container { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin: 30px 0; }
+        .pc-box { padding: 20px; border-radius: 15px; font-size: 0.9rem; }
         .pros { background: #f0fdf4; border: 1px solid #bbf7d0; }
         .cons { background: #fff1f2; border: 1px solid #fecdd3; }
-        .pc-box ul { list-style: none; margin-top: 15px; }
-        .pc-box li { margin-bottom: 10px; position: relative; padding-left: 25px; }
-        .pros li::before { content: "✓"; color: var(--success); position: absolute; left: 0; font-weight: bold; }
-        .cons li::before { content: "✕"; color: var(--danger); position: absolute; left: 0; font-weight: bold; }
+        .pc-box ul { padding-left: 20px; margin-top: 10px; }
 
-        /* TOMBOL BELI (E-COMMERCE) - DIPERBAIKI */
-        .buy-section { background: #fff; border: 2px solid var(--border); border-radius: 24px; padding: 40px; text-align: center; margin-top: 60px; }
-        .price-tag { font-size: 3rem; font-weight: 800; color: var(--dark); display: block; margin-bottom: 10px; }
-        .price-sub { color: #64748b; margin-bottom: 30px; display: block; }
+        /* TOMBOL BELI (E-COMMERCE) */
+        .buy-section { background: #fff; border: 2px solid var(--border); border-radius: 20px; padding: 30px; text-align: center; margin-top: 40px; }
+        .price-tag { font-size: 2.5rem; font-weight: 800; color: var(--dark); display: block; margin-bottom: 5px; }
+        .price-sub { color: #64748b; margin-bottom: 25px; display: block; font-size: 0.9rem; }
         
-        .ecommerce-buttons { display: flex; flex-direction: column; gap: 15px; max-width: 400px; margin: 0 auto; }
+        .ecommerce-buttons { display: flex; flex-direction: column; gap: 10px; max-width: 100%; margin: 0 auto; }
         .btn-shop { 
-            display: flex; align-items: center; justify-content: center; gap: 15px; 
-            padding: 12px 20px; border-radius: 12px; text-decoration: none; 
-            font-weight: 700; transition: transform 0.2s, box-shadow 0.2s; font-size: 1.05rem;
-            background: white; border: 2px solid #ddd; color: #333;
+            display: flex; align-items: center; justify-content: center; gap: 10px; 
+            padding: 12px; border-radius: 10px; text-decoration: none; 
+            font-weight: 700; transition: transform 0.2s; font-size: 1rem;
+            color: white; border: none;
         }
-        .btn-shop:hover { transform: translateY(-3px); box-shadow: 0 10px 20px rgba(0,0,0,0.1); }
-        
-        /* Logo Images */
-        .btn-shop img { width: 28px; height: 28px; object-fit: contain; }
+        .btn-shop:hover { transform: translateY(-2px); opacity: 0.9; }
+        .btn-shop svg { width: 20px; height: 20px; fill: white; }
 
-        /* Warna Border Khusus */
-        .btn-tiktok { border-color: var(--tiktok); color: var(--tiktok); }
-        .btn-tokopedia { border-color: var(--tokopedia); color: var(--tokopedia); }
-        .btn-shopee { border-color: var(--shopee); color: var(--shopee); }
+        /* Warna Tombol */
+        .btn-tiktok { background-color: var(--tiktok); }
+        .btn-tokopedia { background-color: var(--tokopedia); }
+        .btn-shopee { background-color: var(--shopee); }
 
-        /* Sidebar Styling */
-        .sidebar-widget { background: white; padding: 30px; border-radius: 24px; box-shadow: 0 4px 20px rgba(0,0,0,0.05); margin-bottom: 30px; border: 1px solid var(--border); }
-        .widget-title { font-size: 1.2rem; font-weight: 800; color: var(--dark); margin-bottom: 20px; padding-bottom: 15px; border-bottom: 2px solid var(--secondary); }
+        /* SIDEBAR */
+        .sidebar-widget { background: white; padding: 25px; border-radius: 20px; box-shadow: 0 4px 10px rgba(0,0,0,0.03); margin-bottom: 25px; border: 1px solid var(--border); }
+        .widget-title { font-size: 1.1rem; font-weight: 800; color: var(--dark); margin-bottom: 15px; padding-bottom: 10px; border-bottom: 2px solid var(--secondary); }
         
         .search-box { position: relative; }
-        .search-box input { width: 100%; padding: 15px; border: 2px solid var(--border); border-radius: 12px; font-family: inherit; font-size: 0.95rem; transition: 0.3s; }
-        .search-box input:focus { border-color: var(--primary); outline: none; }
-        #searchSuggestions { background: white; position: absolute; width: 100%; border: 1px solid var(--border); border-radius: 12px; top: 60px; z-index: 100; box-shadow: 0 15px 30px rgba(0,0,0,0.1); overflow: hidden; display: none; }
+        .search-box input { width: 100%; padding: 12px; border: 1px solid #cbd5e1; border-radius: 8px; font-size: 0.9rem; }
+        #searchSuggestions { background: white; position: absolute; width: 100%; border: 1px solid #ddd; border-radius: 8px; top: 50px; z-index: 50; box-shadow: 0 10px 20px rgba(0,0,0,0.1); display: none; }
         
-        .category-list, .popular-list { list-style: none; }
-        .category-list a { display: flex; justify-content: space-between; padding: 12px 15px; background: #f8fafc; margin-bottom: 10px; border-radius: 10px; text-decoration: none; color: var(--text); font-weight: 600; transition: 0.3s; }
-        .category-list a:hover { background: var(--primary); color: white; }
-        .category-list a:hover .cat-count { background: white; color: var(--primary); }
-        .cat-count { background: #e2e8f0; padding: 2px 10px; border-radius: 20px; font-size: 0.8rem; }
+        .category-list a, .popular-list a { text-decoration: none; color: var(--text); font-size: 0.9rem; display: block; margin-bottom: 8px; transition: 0.2s; }
+        .category-list a:hover, .popular-list a:hover { color: var(--primary); font-weight: 700; }
+        .cat-count { background: #e2e8f0; padding: 2px 8px; border-radius: 10px; font-size: 0.75rem; float: right; }
+        .popular-list { padding-left: 20px; }
+        .popular-list li { margin-bottom: 10px; }
 
-        .popular-list { counter-reset: rank; }
-        .popular-list li { position: relative; padding: 15px 15px 15px 50px; border-bottom: 1px solid var(--border); }
-        .popular-list li::before { counter-increment: rank; content: counter(rank); position: absolute; left: 0; top: 18px; width: 35px; height: 35px; background: var(--primary); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 0.9rem; }
-        .popular-list a { text-decoration: none; color: var(--dark); font-weight: 700; line-height: 1.4; display: block; margin-bottom: 5px; }
-        .popular-list small { color: #64748b; font-size: 0.8rem; }
+        footer { text-align: center; padding: 40px 20px; color: #94a3b8; font-size: 0.8rem; border-top: 1px solid var(--border); margin-top: 50px; background: white; }
 
-        footer { text-align: center; padding: 60px 20px; color: #94a3b8; background: white; margin-top: 80px; border-top: 1px solid var(--border); }
-
-        @media (max-width: 992px) { .main-wrapper { grid-template-columns: 1fr; } .content { padding: 25px; } }
+        /* --- JURUS ANTI RUSAK DI HP (RESPONSIVE CSS) --- */
+        @media (max-width: 768px) {
+            nav { padding: 15px 20px; }
+            .logo { font-size: 1.1rem; }
+            
+            /* Ubah Grid jadi 1 Kolom memanjang ke bawah */
+            .main-wrapper { grid-template-columns: 1fr; padding: 0 15px; margin: 20px auto; gap: 20px; }
+            
+            /* Sidebar pindah ke bawah konten utama */
+            .sidebar { order: 2; }
+            
+            /* Padding dalam lebih kecil biar muat di layar HP */
+            .content { padding: 25px 20px; }
+            
+            /* Judul lebih kecil */
+            h1 { font-size: 1.6rem; }
+            
+            /* Pro Kontra jadi atas-bawah, bukan kiri-kanan */
+            .pc-container { grid-template-columns: 1fr; gap: 15px; }
+            
+            /* Tombol beli full width */
+            .ecommerce-buttons { width: 100%; }
+        }
     </style>
 </head>
 <body>
 
 <nav>
     <a href="index.html" class="logo">TECH-NO-LOGY</a>
-    <a href="index.html" class="back-link">← Kembali ke Beranda</a>
+    <a href="index.html" class="back-link">← Home</a>
 </nav>
 
 <div class="main-wrapper">
@@ -117,70 +125,47 @@
             <h1>Revolusi TWS 100 Ribuan? Review Jujur KiiP Wireless DTS16 dengan Layar Sentuh</h1>
             <div class="meta">
                 <span>Oleh: Lab Tech-no-Logy</span>
-                <span>Update: 8 Februari 2026</span>
-                <span>5 Menit Baca</span>
+                <span>Update: 8 Feb 2026</span>
             </div>
 
-            <p>Pasar TWS (True Wireless Stereo) <em>entry-level</em> di Indonesia sedang diguncang oleh kehadiran <strong>KiiP Wireless DTS16</strong>. Dibanderol dengan harga hanya <strong>Rp 165.000</strong>, perangkat ini menawarkan fitur yang biasanya hanya ditemukan pada TWS kelas <em>flagship</em> seharga jutaan rupiah: sebuah <strong>Smart Screen LCD Full Color</strong> pada casing pengisian dayanya.</p>
-            <p>Apakah ini hanya sekadar <em>gimmick</em> marketing atau benar-benar sebuah inovasi fungsional? Tim Tech-no-Logy telah menguji perangkat ini selama 7 hari penuh sebagai <em>daily driver</em>, mulai dari mendengarkan musik, gaming, hingga meeting online.</p>
+            <p>Pasar TWS (True Wireless Stereo) <em>entry-level</em> di Indonesia sedang diguncang oleh kehadiran <strong>KiiP Wireless DTS16</strong>. Dibanderol dengan harga hanya <strong>Rp 165.000</strong>, perangkat ini menawarkan fitur yang biasanya hanya ditemukan pada TWS kelas atas: sebuah <strong>Smart Screen LCD</strong> pada casing-nya.</p>
+            <p>Apakah ini hanya sekadar gaya-gayaan atau benar-benar fungsional? Tim Tech-no-Logy telah menguji perangkat ini selama 7 hari penuh sebagai perangkat harian.</p>
 
             <div class="smart-box">
-                <h3 style="color: var(--secondary); border: none; margin-bottom: 10px;">✨ Fitur Unggulan Smart Screen</h3>
-                <p style="font-size: 0.9rem; opacity: 0.9;">Layar sentuh di case bukan hiasan. Anda bisa mengontrol fungsi HP tanpa menyentuh HP:</p>
+                <h3 style="color: var(--secondary); margin-bottom: 10px; border:none;">✨ Fitur Smart Screen</h3>
                 <div class="grid-features">
-                    <div class="f-item">🎵 Kontrol Musik</div>
-                    <div class="f-item">🎭 5 Mode EQ</div>
-                    <div class="f-item">📸 Remote Foto</div>
-                    <div class="f-item">🔍 Find My Buds</div>
-                    <div class="f-item">🔋 Status Baterai</div>
-                    <div class="f-item">⏰ Timer & Jam</div>
+                    <div class="f-item">🎵 Musik</div>
+                    <div class="f-item">🎭 Equalizer</div>
+                    <div class="f-item">📸 Kamera</div>
+                    <div class="f-item">🔍 Cari Buds</div>
+                    <div class="f-item">🔋 Baterai</div>
+                    <div class="f-item">⏰ Timer</div>
                 </div>
             </div>
 
-            <h2>1. Bedah Desain & Build Quality</h2>
-            <p>KiiP DTS16 hadir dengan desain yang cukup futuristik. Bagian depan didominasi oleh layar LCD yang responsif. Namun, kita harus realistis dengan harganya. Material yang digunakan adalah plastik polikarbonat standar yang terasa sangat ringan (total berat 66 gram). Finishing-nya <em>glossy</em> sehingga mudah meninggalkan jejak sidik jari.</p>
-            <div class="highlight-box">
-                <strong>Catatan Penting:</strong> Engsel penutup case terasa sedikit "kopong" dan kurang solid. Kami menyarankan penggunaan casing silikon tambahan (jika ada) atau berhati-hati saat membuka-tutup agar engsel tidak cepat longgar dalam jangka panjang.
-            </div>
+            <h2>1. Desain & Kualitas</h2>
+            <p>KiiP DTS16 hadir dengan desain futuristik berkat layar LCD-nya. Namun, kita harus realistis dengan harganya. Material yang digunakan adalah plastik ringan (66 gram). Finishing-nya glossy sehingga mudah meninggalkan jejak jari. Engsel penutup case terasa sedikit standar, jadi disarankan berhati-hati saat membuka-tutup.</p>
 
-            <h2>2. Analisis Kualitas Audio (Sound Signature)</h2>
-            <p>Mengusung <strong>Driver 13mm</strong>, karakter suara DTS16 cenderung <em>V-Shape</em> yang warm. Berikut detail pengujian kami:</p>
-            <ul>
-                <li style="margin-bottom: 10px;"><strong>Bass (Low Frequency):</strong> Cukup <em>punchy</em> dan bulat. Dentuman drum pada lagu pop dan EDM terasa asik, meski <em>sub-bass</em> (getaran paling rendah) tidak terlalu dalam.</li>
-                <li style="margin-bottom: 10px;"><strong>Vokal (Mid Frequency):</strong> Suara penyanyi terdengar jelas dan posisinya sedikit di depan instrumen. Sangat cocok untuk mendengarkan Podcast atau materi ajar sekolah.</li>
-                <li style="margin-bottom: 10px;"><strong>Treble (High Frequency):</strong> Di volume 50-80%, detail simbal dan gitar terdengar renyah. Namun, peringatan bagi Anda: di volume 100%, treble bisa menjadi sedikit <em>sibilant</em> (menusuk/tajam) di telinga sensitif.</li>
-            </ul>
+            <h2>2. Kualitas Audio</h2>
+            <p>Mengusung <strong>Driver 13mm</strong>, karakter suara DTS16 cenderung warm. Bass cukup bulat dan asik untuk lagu pop. Vokal penyanyi terdengar jelas, cocok untuk Podcast. Namun, di volume 100%, suara treble bisa menjadi sedikit tajam.</p>
 
-            <h2>3. Performa Gaming & Latency</h2>
-            <p>Bagi Anda yang gemar bermain game, KiiP DTS16 sudah dibekali <strong>Bluetooth 5.4</strong> terbaru. Dalam pengujian game <em>PUBG Mobile</em> dan <em>Mobile Legends</em>, delay suara (latency) masih terasa sangat minim, sekitar 40-60ms. Langkah kaki musuh masih bisa terdengar sinkron dengan gambar. Ini peningkatan signifikan dibanding TWS Bluetooth 5.0 lama.</p>
-
-            <h2>4. Kualitas Mikrofon & Panggilan</h2>
-            <p>Fitur <strong>ENC (Environmental Noise Cancelling)</strong> bekerja lumayan untuk meredam suara angin saat dipakai di luar ruangan atau saat naik motor pelan. Namun, karakter suara mikrofonnya terdengar agak "tipis" dan sedikit bergema (seperti di dalam kaleng). Untuk telepon WhatsApp atau Zoom Meeting kasual masih sangat layak, tapi kurang direkomendasikan untuk rekaman konten profesional.</p>
-
-            <h2>5. Daya Tahan Baterai</h2>
-            <p>Dalam pengujian <em>real-time</em> dengan volume 60%:</p>
-            <ul>
-                <li><strong>Earbuds saja:</strong> Bertahan sekitar 4 jam 30 menit nonstop.</li>
-                <li><strong>Total dengan Case:</strong> Bisa mengisi ulang earbud 3-4 kali, total pemakaian sekitar 20-24 jam.</li>
-                <li><strong>Charging:</strong> Menggunakan port USB Type-C, pengisian penuh memakan waktu sekitar 1,5 jam.</li>
-            </ul>
+            <h2>3. Gaming & Panggilan</h2>
+            <p>Bagi Anda yang gemar bermain game, TWS ini sudah dibekali <strong>Bluetooth 5.4</strong>. Delay suara (latency) terasa minim saat main PUBG atau MLBB. Untuk telepon, mikrofonnya standar saja, cukup untuk WhatsApp tapi suaranya agak "tipis".</p>
 
             <div class="pc-container">
                 <div class="pc-box pros">
-                    <h4 style="color: var(--success); margin-bottom: 15px; font-size: 1.2rem;">✅ Alasan Beli (Kelebihan)</h4>
+                    <strong style="color: var(--success);">✅ Kelebihan</strong>
                     <ul>
-                        <li>Layar LCD Inovatif & Fungsional (Jarang ada di harga ini)</li>
-                        <li>Koneksi Bluetooth 5.4 Sangat Stabil</li>
-                        <li>Harga Sangat Terjangkau (Value for Money tinggi)</li>
-                        <li>Fitur "Find My Earbuds" sangat berguna jika lupa naruh</li>
+                        <li>Layar LCD Inovatif</li>
+                        <li>Bluetooth 5.4 Stabil</li>
+                        <li>Harga Sangat Murah</li>
                     </ul>
                 </div>
                 <div class="pc-box cons">
-                    <h4 style="color: var(--danger); margin-bottom: 15px; font-size: 1.2rem;">❌ Pertimbangkan Dulu (Kekurangan)</h4>
+                    <strong style="color: var(--danger);">❌ Kekurangan</strong>
                     <ul>
-                        <li>Material plastik terasa agak ringkih</li>
-                        <li>Mikrofon standar (suara agak tipis)</li>
-                        <li>Layar sentuh terkadang kurang responsif jika jari basah</li>
+                        <li>Bahan Plastik Ringan</li>
+                        <li>Mic Standar</li>
                     </ul>
                 </div>
             </div>
@@ -188,19 +173,19 @@
             <div class="buy-section">
                 <span class="price-sub">Harga Promo Saat Ini</span>
                 <span class="price-tag">Rp 165.000</span>
-                <p style="margin-bottom: 25px; font-size: 0.9rem;">Dapatkan garansi resmi dan pengiriman cepat melalui link di bawah ini:</p>
+                <p style="margin-bottom: 20px; font-size: 0.9rem;">Garansi resmi & pengiriman cepat:</p>
                 
                 <div class="ecommerce-buttons">
                     <a href="https://vt.tokopedia.com/t/ZS9Jj33qpvfps-53fFv/" target="_blank" class="btn-shop btn-tiktok">
-                        <img src="https://logo.clearbit.com/tiktok.com" alt="TikTok">
+                        <svg viewBox="0 0 448 512"><path d="M448 209.91a210.06 210.06 0 0 1-122.77-39.25V349.38A162.55 162.55 0 1 1 185 188.31V278.2a74.62 74.62 0 1 0 52.23 71.18V0l88 0a121.18 121.18 0 0 0 1.86 22.17h0A122.18 122.18 0 0 0 381 102.39a121.43 121.43 0 0 0 67 20.14z"/></svg>
                         Beli di TikTok Shop
                     </a>
                     <a href="https://tk.tokopedia.com/ZSao7TgMK/" target="_blank" class="btn-shop btn-tokopedia">
-                        <img src="https://logo.clearbit.com/tokopedia.com" alt="Tokopedia">
+                        <svg viewBox="0 0 24 24"><path d="M12 0a12 12 0 1 0 12 12A12 12 0 0 0 12 0zM12 21.6a9.6 9.6 0 1 1 9.6-9.6 9.6 9.6 0 0 1-9.6 9.6zM12 4.8a7.2 7.2 0 1 0 7.2 7.2 7.2 7.2 0 0 0-7.2-7.2zM12 16.8a4.8 4.8 0 1 1 4.8-4.8 4.8 4.8 0 0 1-4.8 4.8z"/></svg>
                         Beli di Tokopedia
                     </a>
                     <a href="https://id.shp.ee/QZQPdgR" target="_blank" class="btn-shop btn-shopee">
-                        <img src="https://logo.clearbit.com/shopee.co.id" alt="Shopee">
+                        <svg viewBox="0 0 24 24"><path d="M21.12 5.28h-3.6a5.52 5.52 0 0 0-11.04 0H2.88a2.4 2.4 0 0 0-2.4 2.4v11.04a2.4 2.4 0 0 0 2.4 2.4h18.24a2.4 2.4 0 0 0 2.4-2.4V7.68a2.4 2.4 0 0 0-2.4-2.4zm-10.56 0a3.12 3.12 0 0 1 6.24 0zm10.56 13.44H2.88V7.68h3.6v1.92a.96.96 0 1 0 1.92 0V7.68h7.2v1.92a.96.96 0 1 0 1.92 0V7.68h3.6z"/></svg>
                         Beli di Shopee
                     </a>
                 </div>
@@ -212,7 +197,7 @@
         <div class="sidebar-widget">
             <h3 class="widget-title">Cari Review</h3>
             <div class="search-box">
-                <input type="text" id="searchInput" placeholder="Ketik nama gadget..." onkeyup="searchNews()">
+                <input type="text" id="searchInput" placeholder="Cari gadget..." onkeyup="searchNews()">
                 <div id="searchSuggestions"></div>
             </div>
         </div>
@@ -224,7 +209,7 @@
         </div>
 
         <div class="sidebar-widget">
-            <h3 class="widget-title">Paling Banyak Dibaca</h3>
+            <h3 class="widget-title">Terpopuler</h3>
             <ol class="popular-list" id="popularNews">
                 </ol>
         </div>
@@ -232,7 +217,7 @@
 </div>
 
 <footer>
-    &copy; 2026 Tech-no-Logy. Situs Referensi Gadget Jujur & Terpercaya.<br>
+    &copy; 2026 Tech-no-Logy. Referensi Gadget Jujur.<br>
     Dibuat dengan sepenuh hati oleh Pak Bos.
 </footer>
 
@@ -244,7 +229,7 @@ const newsDatabase = [
         link: "audio-080226.html", 
         category: "Audio" 
     }
-    // Nanti Bos tinggal tambah berita MatePad di sini
+    // Tambah berita baru di sini nanti
 ];
 
 const officialCategories = ["Audio", "Smartphone", "Tablet", "Aksesoris", "Tips & Trik"];
@@ -263,31 +248,22 @@ function updateSidebar() {
     });
 
     // 2. Sistem Ranking Pembaca (LocalStorage)
-    // Ambil nama file saat ini untuk dihitung view-nya
     const currentPage = window.location.pathname.split("/").pop() || "audio-080226.html";
-    
-    // Tambah +1 view setiap kali halaman dibuka
     let currentViews = parseInt(localStorage.getItem(currentPage) || 0) + 1;
     localStorage.setItem(currentPage, currentViews);
 
-    // 3. Tampilkan List Populer (Diurutkan dari view terbanyak)
+    // 3. Tampilkan List Populer
     const popList = document.getElementById('popularNews');
     popList.innerHTML = "";
     
-    // Gabungkan data berita dengan jumlah view dari memory browser
     const rankedNews = newsDatabase.map(n => ({
         ...n,
         views: parseInt(localStorage.getItem(n.link) || 0)
-    })).sort((a, b) => b.views - a.views); // Urutkan Besar ke Kecil
+    })).sort((a, b) => b.views - a.views);
 
     rankedNews.forEach(news => {
-        // Hanya tampilkan jika sudah pernah dibaca minimal 1 kali
         if(news.views > 0) {
-            popList.innerHTML += `
-                <li>
-                    <a href="${news.link}">${news.title}</a>
-                    <small>${news.views} Pembaca</small>
-                </li>`;
+            popList.innerHTML += `<li><a href="${news.link}">${news.title}</a><br><small style="color:#64748b;">${news.views} Pembaca</small></li>`;
         }
     });
 }
@@ -303,20 +279,12 @@ function searchNews() {
         if (matches.length > 0) {
             box.style.display = "block";
             matches.forEach(m => {
-                box.innerHTML += `
-                    <a href="${m.link}" style="display:block; padding:12px; text-decoration:none; color:#333; font-size:0.9rem; border-bottom:1px solid #f1f5f9; hover:bg-gray-50;">
-                        ${m.title}
-                    </a>`;
+                box.innerHTML += `<a href="${m.link}" style="display:block; padding:10px; text-decoration:none; color:#333; font-size:0.85rem; border-bottom:1px solid #f1f5f9;">${m.title}</a>`;
             });
-        } else {
-            box.style.display = "none";
-        }
-    } else {
-        box.style.display = "none";
-    }
+        } else { box.style.display = "none"; }
+    } else { box.style.display = "none"; }
 }
 
-// Jalankan saat halaman selesai dimuat
 window.onload = updateSidebar;
 </script>
 
