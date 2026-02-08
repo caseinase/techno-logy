@@ -15,45 +15,34 @@
         .back-link { color: white; text-decoration: none; font-size: 0.8rem; border: 1px solid white; padding: 5px 15px; border-radius: 6px; }
 
         .main-wrapper { max-width: 1200px; margin: 30px auto; display: grid; grid-template-columns: 1fr 350px; gap: 30px; padding: 0 20px; }
-
-        /* Konten Utama */
         .container { background: white; border-radius: 20px; box-shadow: 0 4px 20px rgba(0,0,0,0.05); overflow: hidden; }
         .content { padding: 40px; }
-        .badge { background: #fee2e2; color: #991b1b; padding: 6px 16px; border-radius: 30px; font-weight: 700; font-size: 0.75rem; text-transform: uppercase; }
         h1 { color: var(--dark); font-size: 2.2rem; line-height: 1.2; margin: 20px 0; letter-spacing: -1px; }
-        .meta { color: #94a3b8; font-size: 0.9rem; margin-bottom: 30px; border-bottom: 1px solid #f1f5f9; padding-bottom: 20px; }
-        
+
         /* Sidebar */
         .sidebar { display: flex; flex-direction: column; gap: 30px; }
         .sidebar-widget { background: white; padding: 25px; border-radius: 20px; box-shadow: 0 4px 20px rgba(0,0,0,0.05); position: relative; }
         .widget-title { font-size: 1.1rem; font-weight: 700; color: var(--dark); margin-bottom: 15px; padding-bottom: 10px; border-bottom: 2px solid var(--secondary); display: inline-block; }
         
-        /* Search */
         .search-box { position: relative; }
         .search-box input { width: 100%; padding: 12px; border: 1px solid var(--border); border-radius: 8px; font-size: 0.9rem; }
         #searchSuggestions { background: white; position: absolute; width: 100%; border: 1px solid #ddd; display: none; z-index: 100; border-radius: 8px; box-shadow: 0 10px 20px rgba(0,0,0,0.1); top: 50px; }
 
-        /* Kategori & Populer */
-        .category-list, .hotline-list { list-style: none; }
-        .category-list a { text-decoration: none; color: var(--text); font-size: 0.9rem; display: flex; justify-content: space-between; padding: 10px; background: #f8fafc; margin-bottom: 8px; border-radius: 8px; transition: 0.3s; }
-        .category-list a:hover { background: var(--primary); color: white; }
-        .cat-count { font-size: 0.75rem; background: #cbd5e1; padding: 2px 8px; border-radius: 10px; color: var(--dark); }
+        .category-list, .popular-list { list-style: none; }
+        .category-list a { text-decoration: none; color: var(--text); font-size: 0.9rem; display: flex; justify-content: space-between; padding: 10px; background: #f8fafc; margin-bottom: 8px; border-radius: 8px; }
+        .cat-count { font-size: 0.75rem; background: #cbd5e1; padding: 2px 8px; border-radius: 10px; }
         
-        .hotline-list li { margin-bottom: 15px; border-bottom: 1px solid #f1f5f9; padding-bottom: 10px; }
-        .hotline-list a { text-decoration: none; color: var(--dark); font-weight: 600; font-size: 0.9rem; }
-        .hotline-list small { display: block; color: #94a3b8; font-size: 0.75rem; }
+        .popular-list { counter-reset: my-counter; padding: 0; }
+        .popular-list li { position: relative; padding: 10px 10px 10px 40px; border-bottom: 1px solid #f1f5f9; }
+        .popular-list li::before { counter-increment: my-counter; content: counter(my-counter); position: absolute; left: 0; top: 10px; width: 30px; height: 30px; background: var(--primary); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 0.8rem; }
+        .popular-list a { text-decoration: none; color: var(--dark); font-weight: 600; font-size: 0.9rem; display: block; }
+        .popular-list small { color: #94a3b8; font-size: 0.75rem; }
 
-        /* Fitur Khusus Review */
+        /* Review Styles */
         .smart-box { background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); color: white; padding: 30px; border-radius: 20px; margin: 25px 0; }
         .grid-features { display: grid; grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); gap: 10px; }
         .f-item { background: rgba(255,255,255,0.08); padding: 10px; border-radius: 10px; text-align: center; font-size: 0.75rem; border: 1px solid rgba(255,255,255,0.1); }
-        .pc-container { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin: 25px 0; }
-        .pc-box { padding: 15px; border-radius: 12px; font-size: 0.85rem; }
-        .pros { background: #f0fdf4; border: 1px solid #bbf7d0; }
-        .cons { background: #fff1f2; border: 1px solid #fecdd3; }
-
-        .cta-price { text-align: center; background: #ee4d2d; color: white; padding: 30px; border-radius: 20px; }
-        .price-val { font-size: 2.2rem; font-weight: 800; display: block; }
+        .cta-price { text-align: center; background: #ee4d2d; color: white; padding: 30px; border-radius: 20px; margin-top: 30px; }
         .btn-link { display: inline-block; background: white; color: #ee4d2d; padding: 10px 25px; border-radius: 8px; text-decoration: none; font-weight: 700; margin-top: 10px; }
 
         footer { text-align: center; padding: 40px; color: #94a3b8; font-size: 0.8rem; background: white; border-top: 1px solid var(--border); margin-top: 40px; }
@@ -70,11 +59,8 @@
 <div class="main-wrapper">
     <div class="container">
         <div class="content">
-            <span class="badge">Review Mendalam</span>
             <h1>TWS 100 Ribuan Punya Layar Sentuh? Review KiiP Wireless DTS16: Si Perusak Harga Pasar!</h1>
-            <div class="meta">Oleh: Lab Tech-no-Logy | Februari 2026</div>
-
-            <p>Di harga <strong>Rp 165.000</strong>, <strong>KiiP Wireless DTS16</strong> membawa fitur layar sentuh pintar yang biasanya hanya ada di TWS mahal. Inilah hasil uji kami.</p>
+            <p>Di harga <strong>Rp 165.000</strong>, <strong>KiiP Wireless DTS16</strong> membawa fitur layar sentuh pintar. Inilah hasil uji kami.</p>
 
             <div class="smart-box">
                 <h3 style="color: var(--secondary); margin-bottom: 15px; font-size: 1.1rem;">✨ Fitur Smart Screen Case</h3>
@@ -88,27 +74,9 @@
             <h2>Bedah Kualitas</h2>
             <p><strong>Desain:</strong> Futuristik tapi material plastik terasa ringan.</p>
             <p><strong>Suara:</strong> Driver 13mm memberikan bass yang pas untuk lagu pop.</p>
-            <p><strong>Koneksi:</strong> Bluetooth 5.4 sangat stabil dan minim delay.</p>
-
-            <div class="pc-container">
-                <div class="pc-box pros">
-                    <strong>✅ Kelebihan</strong>
-                    <ul style="padding-left: 15px; font-size: 0.75rem; margin-top: 5px;">
-                        <li>Layar LCD Inovatif</li>
-                        <li>Harga Rp 165rb</li>
-                    </ul>
-                </div>
-                <div class="pc-box cons">
-                    <strong>❌ Kekurangan</strong>
-                    <ul style="padding-left: 15px; font-size: 0.75rem; margin-top: 5px;">
-                        <li>Bahan Ringkih</li>
-                        <li>Baterai 4.5 Jam</li>
-                    </ul>
-                </div>
-            </div>
 
             <div class="cta-price">
-                <span class="price-val">Rp 165.000</span>
+                <span style="font-size: 2rem; font-weight: 800; display: block;">Rp 165.000</span>
                 <a href="#" class="btn-link">Beli Sekarang</a>
             </div>
         </div>
@@ -118,23 +86,19 @@
         <div class="sidebar-widget">
             <h3 class="widget-title">Cari Berita</h3>
             <div class="search-box">
-                <input type="text" id="searchInput" placeholder="Ketik judul..." onkeyup="searchNews()">
+                <input type="text" id="searchInput" placeholder="Ketik judul berita..." onkeyup="searchNews()">
                 <div id="searchSuggestions"></div>
             </div>
         </div>
 
         <div class="sidebar-widget">
             <h3 class="widget-title">Kategori</h3>
-            <ul class="category-list" id="categoryList">
-                <li><a href="#">Audio & TWS <span class="cat-count" id="count-audio">0</span></a></li>
-                <li><a href="#">Tablet Kerja <span class="cat-count" id="count-tablet">0</span></a></li>
-                <li><a href="#">Edukasi/UKS <span class="cat-count" id="count-edukasi">0</span></a></li>
-            </ul>
+            <ul class="category-list" id="categoryList"></ul>
         </div>
 
         <div class="sidebar-widget">
             <h3 class="widget-title">Paling Banyak Dibaca</h3>
-            <ol class="hotline-list" id="popularNews" style="padding-left: 15px;"></ol>
+            <ol class="popular-list" id="popularNews"></ol>
         </div>
     </aside>
 </div>
@@ -142,51 +106,75 @@
 <footer>&copy; 2026 Tech-no-Logy</footer>
 
 <script>
+// 1. DATABASE BERITA (Hanya masukkan yang sudah ada filenya)
 const newsDatabase = [
-    { title: "Review KiiP Wireless DTS16: Smart Screen 165rb", link: "berita-tws.html", category: "audio" },
-    { title: "Review Huawei MatePad 11.5 2025 PaperMatte", link: "berita-tablet.html", category: "tablet" },
-    { title: "Materi Ajar SMP Kelas 7 & 8", link: "materi-smp.html", category: "edukasi" },
-    { title: "Panduan Kawasan Bebas Jentik UKS", link: "uks-jentik.html", category: "edukasi" }
+    { 
+        title: "TWS 100 Ribuan Punya Layar Sentuh? Review KiiP Wireless DTS16: Si Perusak Harga Pasar!", 
+        link: "berita-tws.html", 
+        category: "Audio" 
+    },
+    { 
+        title: "Review Huawei MatePad 11.5 2025 PaperMatte: Tablet Kerja Guru Terbaik?", 
+        link: "berita-tablet.html", 
+        category: "Tablet" 
+    }
 ];
 
-function searchNews() {
-    let input = document.getElementById('searchInput').value.toLowerCase();
-    let suggestionBox = document.getElementById('searchSuggestions');
-    suggestionBox.innerHTML = "";
-    if (input.length > 0) {
-        let matches = newsDatabase.filter(news => news.title.toLowerCase().includes(input));
-        if (matches.length > 0) {
-            suggestionBox.style.display = "block";
-            matches.forEach(match => {
-                let div = document.createElement('div');
-                div.innerHTML = `<a href="${match.link}" style="display:block; padding:10px; text-decoration:none; color:#333; font-size:0.8rem; border-bottom:1px solid #eee;">${match.title}</a>`;
-                suggestionBox.appendChild(div);
-            });
-        } else { suggestionBox.style.display = "none"; }
-    } else { suggestionBox.style.display = "none"; }
-}
+// 2. DAFTAR KATEGORI RESMI
+const officialCategories = ["Audio", "Smartphone", "Tablet", "Tamplate"];
 
-function updateStats() {
-    document.getElementById('count-audio').innerText = newsDatabase.filter(n => n.category === 'audio').length;
-    document.getElementById('count-tablet').innerText = newsDatabase.filter(n => n.category === 'tablet').length;
-    document.getElementById('count-edukasi').innerText = newsDatabase.filter(n => n.category === 'edukasi').length;
+function updateSidebar() {
+    // --- Update Kategori Otomatis ---
+    const catList = document.getElementById('categoryList');
+    catList.innerHTML = "";
+    officialCategories.forEach(catName => {
+        // Hitung berapa berita di kategori ini
+        const count = newsDatabase.filter(n => n.category === catName).length;
+        // Hanya munculkan jika ada beritanya (count > 0)
+        if (count > 0) {
+            catList.innerHTML += `<li><a href="#">${catName} <span class="cat-count">${count}</span></a></li>`;
+        }
+    });
 
+    // --- Update Paling Banyak Dibaca (Ranking Otomatis) ---
+    // Simpan hitungan klik halaman ini ke localStorage
     let currentPage = window.location.pathname.split("/").pop() || "index.html";
-    let viewCount = localStorage.getItem(currentPage) || 0;
-    localStorage.setItem(currentPage, parseInt(viewCount) + 1);
+    let views = parseInt(localStorage.getItem(currentPage) || 0) + 1;
+    localStorage.setItem(currentPage, views);
 
-    let popularList = document.getElementById('popularNews');
-    let sortedNews = newsDatabase.map(n => {
-        return { ...n, views: parseInt(localStorage.getItem(n.link) || 0) };
-    }).sort((a, b) => b.views - a.views);
+    const popList = document.getElementById('popularNews');
+    popList.innerHTML = "";
+    
+    // Urutkan database berdasarkan data views di localStorage
+    const sorted = newsDatabase.map(n => ({
+        ...n,
+        v: parseInt(localStorage.getItem(n.link) || 0)
+    })).sort((a, b) => b.v - a.v);
 
-    sortedNews.forEach(news => {
-        let li = document.createElement('li');
-        li.innerHTML = `<a href="${news.link}">${news.title}</a><small>${news.views} Pembaca</small>`;
-        popularList.appendChild(li);
+    // Tampilkan berita yang sudah ada datanya
+    sorted.forEach(news => {
+        popList.innerHTML += `<li><a href="${news.link}">${news.title}</a><small>${news.v} Pembaca</small></li>`;
     });
 }
-window.onload = updateStats;
+
+// 3. FUNGSI PENCARIAN (Hanya judul yang sama persis/cocok)
+function searchNews() {
+    let input = document.getElementById('searchInput').value.toLowerCase();
+    let box = document.getElementById('searchSuggestions');
+    box.innerHTML = "";
+    
+    if (input.length > 0) {
+        let matches = newsDatabase.filter(n => n.title.toLowerCase().includes(input));
+        if (matches.length > 0) {
+            box.style.display = "block";
+            matches.forEach(m => {
+                box.innerHTML += `<a href="${m.link}" style="display:block; padding:10px; text-decoration:none; color:#333; font-size:0.85rem; border-bottom:1px solid #eee;">${m.title}</a>`;
+            });
+        } else { box.style.display = "none"; }
+    } else { box.style.display = "none"; }
+}
+
+window.onload = updateSidebar;
 </script>
 </body>
 </html>
