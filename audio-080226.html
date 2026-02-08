@@ -8,8 +8,11 @@
     
     <style>
         :root { --primary: #004a99; --secondary: #00d4ff; --dark: #0f172a; --text: #334155; --bg: #f8fafc; --border: #e2e8f0; }
+        
         /* Warna Brand E-Commerce */
-        --shopee: #ee4d2d; --tokopedia: #42b549; --tiktok: #000000;
+        --shopee: #ee4d2d; 
+        --tokopedia: #42b549; 
+        --tiktok: #000000;
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: 'Inter', sans-serif; background-color: var(--bg); color: var(--text); line-height: 1.8; }
@@ -33,7 +36,7 @@
         h3 { font-size: 1.2rem; color: var(--primary); margin-bottom: 15px; font-weight: 700; }
         p { margin-bottom: 20px; text-align: justify; font-size: 1.05rem; }
         
-        .badge { background: #fee2e2; color: #991b1b; padding: 8px 20px; border-radius: 50px; font-weight: 700; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; display: inline-block; }
+        .badge { background: #e0f2fe; color: var(--primary); padding: 8px 20px; border-radius: 50px; font-weight: 700; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; display: inline-block; }
         .meta { display: flex; align-items: center; gap: 15px; color: #64748b; font-size: 0.9rem; margin-bottom: 40px; border-bottom: 1px solid var(--border); padding-bottom: 25px; }
         
         /* Kotak Spesial */
@@ -52,19 +55,27 @@
         .pros li::before { content: "✓"; color: var(--success); position: absolute; left: 0; font-weight: bold; }
         .cons li::before { content: "✕"; color: var(--danger); position: absolute; left: 0; font-weight: bold; }
 
-        /* TOMBOL BELI (E-COMMERCE) - UPDATE LOGO */
+        /* TOMBOL BELI (E-COMMERCE) - DIPERBAIKI */
         .buy-section { background: #fff; border: 2px solid var(--border); border-radius: 24px; padding: 40px; text-align: center; margin-top: 60px; }
         .price-tag { font-size: 3rem; font-weight: 800; color: var(--dark); display: block; margin-bottom: 10px; }
         .price-sub { color: #64748b; margin-bottom: 30px; display: block; }
         
         .ecommerce-buttons { display: flex; flex-direction: column; gap: 15px; max-width: 400px; margin: 0 auto; }
-        .btn-shop { display: flex; align-items: center; justify-content: center; gap: 15px; padding: 15px 20px; border-radius: 12px; text-decoration: none; color: white; font-weight: 700; transition: transform 0.2s, box-shadow 0.2s; font-size: 1.1rem; }
-        .btn-shop:hover { transform: translateY(-3px); box-shadow: 0 10px 20px rgba(0,0,0,0.15); }
-        .btn-shop svg { width: 24px; height: 24px; fill: white; }
+        .btn-shop { 
+            display: flex; align-items: center; justify-content: center; gap: 15px; 
+            padding: 12px 20px; border-radius: 12px; text-decoration: none; 
+            font-weight: 700; transition: transform 0.2s, box-shadow 0.2s; font-size: 1.05rem;
+            background: white; border: 2px solid #ddd; color: #333;
+        }
+        .btn-shop:hover { transform: translateY(-3px); box-shadow: 0 10px 20px rgba(0,0,0,0.1); }
+        
+        /* Logo Images */
+        .btn-shop img { width: 28px; height: 28px; object-fit: contain; }
 
-        .btn-tiktok { background: var(--tiktok); }
-        .btn-tokopedia { background: var(--tokopedia); }
-        .btn-shopee { background: var(--shopee); }
+        /* Warna Border Khusus */
+        .btn-tiktok { border-color: var(--tiktok); color: var(--tiktok); }
+        .btn-tokopedia { border-color: var(--tokopedia); color: var(--tokopedia); }
+        .btn-shopee { border-color: var(--shopee); color: var(--shopee); }
 
         /* Sidebar Styling */
         .sidebar-widget { background: white; padding: 30px; border-radius: 24px; box-shadow: 0 4px 20px rgba(0,0,0,0.05); margin-bottom: 30px; border: 1px solid var(--border); }
@@ -102,7 +113,7 @@
 <div class="main-wrapper">
     <article class="container">
         <div class="content">
-            <span class="badge">Review Eksklusif & Mendalam</span>
+            <span class="badge">Audio</span>
             <h1>Revolusi TWS 100 Ribuan? Review Jujur KiiP Wireless DTS16 dengan Layar Sentuh</h1>
             <div class="meta">
                 <span>Oleh: Lab Tech-no-Logy</span>
@@ -141,7 +152,7 @@
             </ul>
 
             <h2>3. Performa Gaming & Latency</h2>
-            <p>Bagi Bos yang suka main game, KiiP DTS16 sudah dibekali <strong>Bluetooth 5.4</strong> terbaru. Dalam pengujian game <em>PUBG Mobile</em> dan <em>Mobile Legends</em>, delay suara (latency) masih terasa sangat minim, sekitar 40-60ms. Langkah kaki musuh masih bisa terdengar sinkron dengan gambar. Ini peningkatan signifikan dibanding TWS Bluetooth 5.0 lama.</p>
+            <p>Bagi Anda yang gemar bermain game, KiiP DTS16 sudah dibekali <strong>Bluetooth 5.4</strong> terbaru. Dalam pengujian game <em>PUBG Mobile</em> dan <em>Mobile Legends</em>, delay suara (latency) masih terasa sangat minim, sekitar 40-60ms. Langkah kaki musuh masih bisa terdengar sinkron dengan gambar. Ini peningkatan signifikan dibanding TWS Bluetooth 5.0 lama.</p>
 
             <h2>4. Kualitas Mikrofon & Panggilan</h2>
             <p>Fitur <strong>ENC (Environmental Noise Cancelling)</strong> bekerja lumayan untuk meredam suara angin saat dipakai di luar ruangan atau saat naik motor pelan. Namun, karakter suara mikrofonnya terdengar agak "tipis" dan sedikit bergema (seperti di dalam kaleng). Untuk telepon WhatsApp atau Zoom Meeting kasual masih sangat layak, tapi kurang direkomendasikan untuk rekaman konten profesional.</p>
@@ -181,15 +192,15 @@
                 
                 <div class="ecommerce-buttons">
                     <a href="https://vt.tokopedia.com/t/ZS9Jj33qpvfps-53fFv/" target="_blank" class="btn-shop btn-tiktok">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M448 209.91a210.06 210.06 0 0 1-122.77-39.25V349.38A162.55 162.55 0 1 1 185 188.31V278.2a74.62 74.62 0 1 0 52.23 71.18V0l88 0a121.18 121.18 0 0 0 1.86 22.17h0A122.18 122.18 0 0 0 381 102.39a121.43 121.43 0 0 0 67 20.14z"/></svg>
+                        <img src="https://logo.clearbit.com/tiktok.com" alt="TikTok">
                         Beli di TikTok Shop
                     </a>
                     <a href="https://tk.tokopedia.com/ZSao7TgMK/" target="_blank" class="btn-shop btn-tokopedia">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 0a12 12 0 1 0 12 12A12 12 0 0 0 12 0zM12 21.6a9.6 9.6 0 1 1 9.6-9.6 9.6 9.6 0 0 1-9.6 9.6zM12 4.8a7.2 7.2 0 1 0 7.2 7.2 7.2 7.2 0 0 0-7.2-7.2zM12 16.8a4.8 4.8 0 1 1 4.8-4.8 4.8 4.8 0 0 1-4.8 4.8z"/></svg>
+                        <img src="https://logo.clearbit.com/tokopedia.com" alt="Tokopedia">
                         Beli di Tokopedia
                     </a>
                     <a href="https://id.shp.ee/QZQPdgR" target="_blank" class="btn-shop btn-shopee">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21.12 5.28h-3.6a5.52 5.52 0 0 0-11.04 0H2.88a2.4 2.4 0 0 0-2.4 2.4v11.04a2.4 2.4 0 0 0 2.4 2.4h18.24a2.4 2.4 0 0 0 2.4-2.4V7.68a2.4 2.4 0 0 0-2.4-2.4zm-10.56 0a3.12 3.12 0 0 1 6.24 0zm10.56 13.44H2.88V7.68h3.6v1.92a.96.96 0 1 0 1.92 0V7.68h7.2v1.92a.96.96 0 1 0 1.92 0V7.68h3.6z"/></svg>
+                        <img src="https://logo.clearbit.com/shopee.co.id" alt="Shopee">
                         Beli di Shopee
                     </a>
                 </div>
