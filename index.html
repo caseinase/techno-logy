@@ -3,70 +3,120 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tech-no-Logy - Referensi Gadget Jujur</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <title>Review Huawei MatePad 11.5 PaperMatte - Tech-no-Logy</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Open+Sans:wght@700&family=Roboto:wght@500&display=swap" rel="stylesheet">
     
     <style>
         :root { --primary: #004a99; --secondary: #00d4ff; --dark: #0f172a; --text: #334155; --bg: #f8fafc; --border: #e2e8f0; }
         
+        /* Warna Brand E-Commerce (Akurat) */
+        --shopee-color: #ee4d2d; 
+        --tokopedia-color: #03AC0E; 
+        --tiktok-color: #000000;
+
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Inter', sans-serif; background-color: var(--bg); color: var(--text); line-height: 1.6; }
-
+        body { font-family: 'Inter', sans-serif; background-color: var(--bg); color: var(--text); line-height: 1.8; }
+        
         /* Navbar */
-        nav { background: var(--primary); color: white; padding: 15px 5%; position: sticky; top: 0; z-index: 1000; box-shadow: 0 4px 20px rgba(0,0,0,0.1); display: flex; justify-content: space-between; align-items: center; }
-        .logo { font-weight: 800; font-size: 1.5rem; text-decoration: none; color: white; letter-spacing: -1px; }
-        .nav-links a { color: rgba(255,255,255,0.8); text-decoration: none; margin-left: 20px; font-size: 0.9rem; transition: 0.3s; }
-        .nav-links a:hover { color: white; }
+        nav { background: var(--primary); color: white; padding: 15px 5%; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 1000; box-shadow: 0 4px 20px rgba(0,0,0,0.1); }
+        .logo { font-weight: 800; text-decoration: none; color: white; font-size: 1.2rem; letter-spacing: -0.5px; }
+        .back-link { color: white; text-decoration: none; font-size: 0.8rem; border: 1px solid rgba(255,255,255,0.3); padding: 8px 15px; border-radius: 50px; transition: 0.3s; }
+        .back-link:hover { background: white; color: var(--primary); }
 
-        /* Hero Section (Sapaan) */
-        .hero { background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); color: white; padding: 60px 5%; text-align: center; margin-bottom: 40px; }
-        .hero h1 { font-size: 2.5rem; font-weight: 800; margin-bottom: 10px; }
-        .hero p { font-size: 1.1rem; color: #94a3b8; max-width: 600px; margin: 0 auto; }
+        /* Layout */
+        .main-wrapper { max-width: 1200px; margin: 40px auto; display: grid; grid-template-columns: 1fr 360px; gap: 40px; padding: 0 20px; }
+        .container { background: white; border-radius: 20px; box-shadow: 0 5px 20px rgba(0,0,0,0.03); overflow: hidden; border: 1px solid var(--border); }
+        .content { padding: 50px; }
+        
+        /* Typography */
+        h1 { color: var(--dark); font-size: 2.2rem; line-height: 1.2; margin: 25px 0; font-weight: 800; letter-spacing: -1px; }
+        h2 { color: var(--dark); margin: 40px 0 20px; font-size: 1.5rem; font-weight: 700; border-left: 6px solid var(--secondary); padding-left: 20px; }
+        h3 { font-size: 1.2rem; color: var(--primary); margin-bottom: 15px; font-weight: 700; }
+        p { margin-bottom: 20px; text-align: justify; font-size: 1.05rem; color: #475569; }
+        
+        .badge { background: #e0f2fe; color: var(--primary); padding: 8px 20px; border-radius: 50px; font-weight: 700; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; display: inline-block; }
+        .meta { display: flex; align-items: center; gap: 20px; color: #64748b; font-size: 0.9rem; margin-bottom: 40px; border-bottom: 1px solid var(--border); padding-bottom: 25px; }
+        
+        /* --- STYLE BARU UNTUK GAMBAR PRODUK --- */
+        .product-image-container { margin: 35px 0; text-align: center; }
+        .product-image { 
+            max-width: 100%; height: auto; 
+            border-radius: 16px; /* Sudut melengkung */
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05); /* Bayangan halus */
+            border: 1px solid var(--border);
+        }
+        .image-caption { font-size: 0.85rem; color: #64748b; margin-top: 10px; font-style: italic; }
 
-        /* Layout Utama */
-        .main-wrapper { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 350px; gap: 40px; padding: 0 20px; }
+        /* Feature Box */
+        .smart-box { background: linear-gradient(135deg, #0f172a 0%, #334155 100%); color: white; padding: 35px; border-radius: 24px; margin: 35px 0; box-shadow: 0 15px 30px rgba(15, 23, 42, 0.15); }
+        .grid-features { display: grid; grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); gap: 15px; margin-top: 20px; }
+        .f-item { background: rgba(255,255,255,0.1); padding: 15px; border-radius: 16px; text-align: center; font-size: 0.85rem; border: 1px solid rgba(255,255,255,0.15); backdrop-filter: blur(5px); }
+
+        /* Highlight Box */
+        .highlight-box { background: #fff7ed; border: 1px solid #ffedd5; border-left: 4px solid #f97316; padding: 20px; border-radius: 12px; margin: 20px 0; font-size: 0.95rem; color: #9a3412; }
+
+        /* Target Audience Box */
+        .target-box { background: #eff6ff; border: 2px dashed #bfdbfe; padding: 30px; border-radius: 20px; margin: 40px 0; }
+        .target-title { font-weight: 800; color: #1e40af; font-size: 1.1rem; margin-bottom: 15px; display: block; }
+        .target-list { list-style: none; padding: 0; }
+        .target-list li { margin-bottom: 10px; padding-left: 25px; position: relative; }
+        .t-yes::before { content: "✅"; position: absolute; left: 0; }
+        .t-no::before { content: "❌"; position: absolute; left: 0; }
+
+        /* Pro Kontra Box */
+        .pc-container { display: grid; grid-template-columns: 1fr 1fr; gap: 25px; margin: 40px 0; }
+        .pc-box { padding: 30px; border-radius: 20px; font-size: 0.95rem; }
+        .pros { background: #f0fdf4; border: 1px solid #bbf7d0; }
+        .cons { background: #fff1f2; border: 1px solid #fecdd3; }
+        .pc-box ul { padding-left: 20px; margin-top: 15px; }
+        .pc-box li { margin-bottom: 10px; }
+
+        /* TOMBOL BELI */
+        .buy-section { background: #fff; border: 2px solid var(--border); border-radius: 24px; padding: 40px; text-align: center; margin-top: 60px; }
+        .price-tag { font-size: 2.8rem; font-weight: 800; color: var(--dark); display: block; margin-bottom: 5px; }
+        .price-sub { color: #64748b; margin-bottom: 30px; display: block; font-size: 0.95rem; }
         
-        /* Grid Artikel */
-        .articles-grid { display: grid; grid-template-columns: 1fr; gap: 30px; }
+        .ecommerce-buttons { display: flex; flex-direction: column; gap: 15px; max-width: 100%; margin: 0 auto; }
         
-        /* Kartu Artikel */
-        .card { background: white; border-radius: 16px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.05); border: 1px solid var(--border); transition: transform 0.3s; display: flex; flex-direction: column; }
-        .card:hover { transform: translateY(-5px); box-shadow: 0 10px 25px rgba(0,0,0,0.1); }
-        
-        .card-image { height: 200px; display: flex; align-items: center; justify-content: center; background: #e2e8f0; }
-        .card-icon { font-size: 4rem; }
-        
-        .card-content { padding: 25px; flex-grow: 1; display: flex; flex-direction: column; }
-        .tag { background: #e0f2fe; color: var(--primary); padding: 4px 12px; border-radius: 50px; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; align-self: flex-start; margin-bottom: 15px; }
-        
-        .card h3 { margin-bottom: 10px; line-height: 1.4; }
-        .card h3 a { text-decoration: none; color: var(--dark); font-size: 1.25rem; font-weight: 800; transition: 0.2s; }
-        .card h3 a:hover { color: var(--primary); }
-        
-        .card p { font-size: 0.95rem; color: #64748b; margin-bottom: 20px; flex-grow: 1; }
-        
-        .card-footer { border-top: 1px solid var(--border); padding-top: 15px; display: flex; justify-content: space-between; align-items: center; font-size: 0.85rem; color: #94a3b8; }
-        .read-more { color: var(--primary); text-decoration: none; font-weight: 700; }
+        /* Base Button Style */
+        .btn-shop { 
+            display: block; width: 100%; padding: 18px; border-radius: 12px; 
+            text-decoration: none; 
+            text-align: center; transition: transform 0.2s, box-shadow 0.2s; 
+            border: none; cursor: pointer;
+            color: #ffffff !important; /* Wajib Putih */
+        }
+        .btn-shop:hover { transform: translateY(-3px); box-shadow: 0 10px 25px rgba(0,0,0,0.15); opacity: 0.95; }
+
+        /* WARNA & FONT DIPAKSA DENGAN !IMPORTANT */
+        .tiktok-force { background-color: #000000 !important; font-family: 'Inter', sans-serif !important; font-weight: 800 !important; font-size: 1.2rem; letter-spacing: -0.5px; }
+        .tokopedia-force { background-color: #03AC0E !important; font-family: 'Open Sans', sans-serif !important; font-weight: 700 !important; font-size: 1.1rem; }
+        .shopee-force { background-color: #EE4D2D !important; font-family: 'Roboto', sans-serif !important; font-weight: 500 !important; font-size: 1.1rem; }
 
         /* Sidebar */
-        .sidebar-widget { background: white; padding: 25px; border-radius: 16px; border: 1px solid var(--border); margin-bottom: 25px; }
-        .widget-title { font-size: 1.1rem; font-weight: 800; color: var(--dark); margin-bottom: 15px; padding-bottom: 10px; border-bottom: 2px solid var(--secondary); }
-        
+        .sidebar-widget { background: white; padding: 30px; border-radius: 24px; box-shadow: 0 4px 10px rgba(0,0,0,0.03); margin-bottom: 30px; border: 1px solid var(--border); }
+        .widget-title { font-size: 1.2rem; font-weight: 800; color: var(--dark); margin-bottom: 20px; padding-bottom: 15px; border-bottom: 2px solid var(--secondary); }
         .search-box { position: relative; }
-        .search-box input { width: 100%; padding: 12px; border: 1px solid #cbd5e1; border-radius: 8px; font-size: 0.9rem; }
-        #searchSuggestions { background: white; position: absolute; width: 100%; border: 1px solid #ddd; border-radius: 8px; top: 50px; z-index: 50; box-shadow: 0 10px 20px rgba(0,0,0,0.1); display: none; }
-        
-        .category-list a, .popular-list a { text-decoration: none; color: var(--text); font-size: 0.9rem; display: block; margin-bottom: 8px; transition: 0.2s; padding: 5px 0; border-bottom: 1px solid #f1f5f9; }
+        .search-box input { width: 100%; padding: 15px; border: 1px solid #cbd5e1; border-radius: 10px; font-size: 0.95rem; }
+        #searchSuggestions { background: white; position: absolute; width: 100%; border: 1px solid #ddd; border-radius: 10px; top: 60px; z-index: 50; box-shadow: 0 15px 30px rgba(0,0,0,0.1); display: none; }
+        .category-list a, .popular-list a { text-decoration: none; color: var(--text); font-size: 0.95rem; display: block; margin-bottom: 10px; transition: 0.2s; padding: 5px 0; border-bottom: 1px solid #f1f5f9; }
         .category-list a:hover, .popular-list a:hover { color: var(--primary); font-weight: 700; padding-left: 5px; }
-        .cat-count { background: #e2e8f0; padding: 2px 8px; border-radius: 10px; font-size: 0.75rem; float: right; }
+        .cat-count { background: #e2e8f0; padding: 2px 10px; border-radius: 12px; font-size: 0.8rem; float: right; }
         .popular-list { padding-left: 20px; }
-        .popular-list li { margin-bottom: 10px; }
+        .popular-list li { margin-bottom: 12px; }
 
-        footer { text-align: center; padding: 40px 20px; color: #94a3b8; font-size: 0.85rem; border-top: 1px solid var(--border); margin-top: 60px; background: white; }
+        footer { text-align: center; padding: 60px 20px; color: #94a3b8; font-size: 0.85rem; border-top: 1px solid var(--border); margin-top: 80px; background: white; }
 
+        /* Responsive */
         @media (max-width: 768px) {
-            .hero h1 { font-size: 1.8rem; }
-            .main-wrapper { grid-template-columns: 1fr; padding: 0 15px; }
+            nav { padding: 15px 20px; }
+            .logo { font-size: 1.1rem; }
+            .main-wrapper { grid-template-columns: 1fr; padding: 0 15px; margin: 20px auto; gap: 20px; }
+            .sidebar { order: 2; }
+            .content { padding: 25px 20px; }
+            .pc-container { grid-template-columns: 1fr; gap: 15px; }
+            h1 { font-size: 1.8rem; }
+            .price-tag { font-size: 2.2rem; }
         }
     </style>
 </head>
@@ -74,35 +124,184 @@
 
 <nav>
     <a href="index.html" class="logo">TECH-NO-LOGY</a>
-    <div class="nav-links">
-        <a href="#">Tentang</a>
-        <a href="#">Kontak</a>
-    </div>
+    <a href="index.html" class="back-link">← Home</a>
 </nav>
 
-<div class="hero">
-    <h1>Review Gadget Jujur & Tajam</h1>
-    <p>Membantu Pak Bos memilih gadget terbaik tanpa bahasa marketing yang membingungkan.</p>
-</div>
-
 <div class="main-wrapper">
-    <main class="articles-grid">
-        
-        <article class="card">
-            <div class="card-image" style="background: linear-gradient(135deg, #3b82f6, #8b5cf6);">
-                <span class="card-icon">📱</span>
+    <article class="container">
+        <div class="content">
+            <span class="badge">Tablet</span>
+            <h1>Tablet Rasa Kertas untuk Ngetik & Baca? Review Jujur Huawei MatePad 11.5 2025 PaperMatte</h1>
+            <div class="meta">
+                <span>Oleh: Lab Tech-no-Logy</span>
+                <span>Update: 8 Feb 2026</span>
+                <span>7 Menit Baca</span>
             </div>
-            <div class="card-content">
-                <span class="tag">Tablet</span>
-                <h3><a href="tablet-080226.html">Tablet Rasa Kertas? Review Huawei MatePad 11.5 PaperMatte</a></h3>
-                <p>Aman untuk mata dan enak buat ngetik. Tapi benarkah tablet ini bisa menggantikan laptop sepenuhnya? Cek faktanya di sini.</p>
-                <div class="card-footer">
-                    <span>8 Feb 2026</span>
-                    <a href="tablet-080226.html" class="read-more">Baca Selengkapnya →</a>
+
+            <p>Banyak yang bilang tablet ini adalah "Laptop Killer". Tim Tech-no-Logy mencoba membuktikannya. Kesimpulan awal kami: Tablet ini bisa menggantikan laptop, <strong>TAPI ada syaratnya.</strong> Tergantung siapa Anda dan seberat apa pekerjaan Anda.</p>
+            <p>Jika Anda mencari perangkat untuk mengetik naskah, membaca materi ajar, atau tanda tangan dokumen digital, tablet ini juara. Tapi jika Anda berharap bisa mengedit video berat atau multitasking gila-gilaan seperti di laptop, Anda mungkin akan sedikit kecewa.</p>
+
+            <div class="product-image-container">
+                <img src="https://fdn.gsmarena.com/imgroot/news/24/05/huawei-matepad-11-5-s-ofic/gsmarena_001.jpg" alt="Huawei MatePad 11.5 PaperMatte Fullset dengan Keyboard dan Stylus" class="product-image">
+                <div class="image-caption">Tampilan lengkap Huawei MatePad 11.5 PaperMatte Edition dengan aksesorisnya.</div>
+            </div>
+
+            <div class="smart-box">
+                <h3 style="color: var(--secondary); margin-bottom: 10px; border:none;">✨ Fitur Kunci</h3>
+                <div class="grid-features">
+                    <div class="f-item">📄 PaperMatte</div>
+                    <div class="f-item">⌨️ WPS PC-Level</div>
+                    <div class="f-item">🚀 Kirin T82B</div>
+                    <div class="f-item">✏️ M-Pencil 3</div>
+                    <div class="f-item">🔋 7700 mAh</div>
+                    <div class="f-item">🎨 GoPaint App</div>
                 </div>
             </div>
-        </article>
 
-        <article class="card">
-            <div class="card-image" style="background: linear-gradient(135deg, #10b981, #3b82f6);">
-                <span class="card-icon">
+            <h2>1. Layar PaperMatte: Mata Sehat, Tapi...</h2>
+            <p>Layarnya unik, permukaannya <em>matte</em> (doff) dan bertekstur kasar seperti kertas. <strong>Kelebihannya:</strong> Untuk baca E-Book, PDF materi ajar, dan ngetik di bawah lampu terang, pantulan cahaya nyaris nol. Mata tidak cepat lelah.</p>
+            <p><strong>Komprominya:</strong> Karena lapisan matte ini, kecerahan dan ketajaman warna sedikit turun dibanding layar glossy biasa. Nonton film tetap enak, tapi tidak "setajam" layar kaca pada umumnya.</p>
+
+            <h2>2. WPS Office PC-Level: Mirip Laptop?</h2>
+            <p>Fitur ini memang nilai jual utama. Tampilan WPS Office di sini punya <em>Menu Bar</em> dan <em>Ribbon</em> persis kayak di PC Windows.</p>
+            <ul>
+                <li><strong>BISA:</strong> Ngetik surat, bikin RPP, tabel nilai sederhana, atau slide presentasi dasar. Rasanya sudah 90% mirip laptop.</li>
+                <li><strong>SULIT:</strong> Kalau Anda pengguna <em>advance</em>. Misalnya butuh rumus Excel yang njelimet, Macro, atau edit layout dokumen yang sangat kompleks.</li>
+            </ul>
+            <div class="highlight-box">
+                <strong>⚠️ Catatan Shortcut:</strong> Beberapa Shortcut Keyboard tidak berfungsi sama persis dengan di Windows. Jadi Anda mungkin akan sedikit "kagok" dan perlu adaptasi lagi.
+            </div>
+
+            <h2>3. Sensasi Menulis & Performa</h2>
+            <p>Buat Guru atau Dosen yang sering tanda tangan digital atau koreksi tugas format PDF, ini <strong>Surga</strong>. Goresan pensilnya terasa nyata, ada suara "srek-srek" halus. Tulisan tangan jadi jauh lebih rapi.</p>
+            
+            <div class="product-image-container">
+                <img src="https://consumer.huawei.com/content/dam/huawei-cbg-site/common/mkt/pdp/tablets/matepad-11-5-s/img/huawei-matepad-11-5-s-kv.jpg" alt="Menulis di layar PaperMatte dengan M-Pencil" class="product-image">
+                <div class="image-caption">Sensasi menulis di layar PaperMatte terasa seperti di atas kertas asli.</div>
+            </div>
+
+            <p>Dapur pacunya menggunakan <strong>Kirin T82B (Octa-core)</strong>. Cukup ngebut untuk buka 2-3 aplikasi produktivitas. Soal <strong>Google</strong>, masih sama: tidak ada PlayStore bawaan, harus pakai GBox/Aurora. YouTube dan Drive bisa jalan, tapi butuh instalasi tambahan.</p>
+
+            <div class="target-box">
+                <span class="target-title">🎯 Vonis Akhir: Tablet Ini Cocok Untuk Siapa?</span>
+                <ul class="target-list">
+                    <li class="t-yes"><strong>Guru & Dosen:</strong> Sangat pas untuk koreksi skripsi/tugas, baca jurnal, dan bikin slide ajar.</li>
+                    <li class="t-yes"><strong>Mahasiswa:</strong> Ringan dibawa ke kampus untuk ngetik makalah dan catat materi kuliah.</li>
+                    <li class="t-yes"><strong>Admin/Penulis:</strong> Nyaman untuk mengetik naskah panjang tanpa silau.</li>
+                    <li class="t-no" style="margin-top:15px;"><strong>Video Editor Pro:</strong> Kurang *powerful* untuk render video berat.</li>
+                    <li class="t-no"><strong>Gamer Hardcore:</strong> Chipset kelas menengah, bukan untuk rata kanan.</li>
+                    <li class="t-no"><strong>Pengguna Excel "Dewa":</strong> Fitur Macro/VBA belum tersedia penuh.</li>
+                </ul>
+            </div>
+
+            <div class="pc-container">
+                <div class="pc-box pros">
+                    <strong style="color: var(--success); font-size:1.2rem;">✅ Kelebihan</strong>
+                    <ul>
+                        <li>Layar Anti-Silau Terbaik (Mata Adem)</li>
+                        <li>WPS Office Tampilan PC</li>
+                        <li>Paket Penjualan Lengkap</li>
+                        <li>Baterai Awet Seharian</li>
+                    </ul>
+                </div>
+                <div class="pc-box cons">
+                    <strong style="color: var(--danger); font-size:1.2rem;">❌ Kekurangan</strong>
+                    <ul>
+                        <li>Shortcut Keyboard Perlu Adaptasi</li>
+                        <li>Tanpa Google Native (Pakai GBox)</li>
+                        <li>Tidak Ada Slot MicroSD</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="buy-section">
+                <span class="price-sub">Harga Estimasi (Fullset)</span>
+                <span class="price-tag">Rp 5.600.000</span>
+                <p style="margin-bottom: 30px; font-size: 0.95rem; color: #64748b;">Cek harga terbaru dan ketersediaan stok di e-commerce favorit Anda:</p>
+                
+                <div class="ecommerce-buttons">
+                    <a href="https://www.tiktok.com/search?q=huawei+matepad+11.5+2025" target="_blank" class="btn-shop tiktok-force">
+                        Cek di TikTok Shop
+                    </a>
+                    <a href="https://www.tokopedia.com/search?q=huawei+matepad+11.5+2025" target="_blank" class="btn-shop tokopedia-force">
+                        Cek di Tokopedia
+                    </a>
+                    <a href="https://shopee.co.id/search?keyword=huawei%20matepad%2011.5%202025" target="_blank" class="btn-shop shopee-force">
+                        Cek di Shopee
+                    </a>
+                </div>
+            </div>
+        </div>
+    </article>
+
+    <aside class="sidebar">
+        <div class="sidebar-widget">
+            <h3 class="widget-title">Cari Review</h3>
+            <div class="search-box">
+                <input type="text" id="searchInput" placeholder="Cari gadget..." onkeyup="searchNews()">
+                <div id="searchSuggestions"></div>
+            </div>
+        </div>
+        <div class="sidebar-widget">
+            <h3 class="widget-title">Kategori</h3>
+            <ul class="category-list" id="categoryList"></ul>
+        </div>
+        <div class="sidebar-widget">
+            <h3 class="widget-title">Terpopuler</h3>
+            <ol class="popular-list" id="popularNews"></ol>
+        </div>
+    </aside>
+</div>
+
+<footer>&copy; 2026 Tech-no-Logy. Referensi Gadget Jujur.<br>Dibuat dengan sepenuh hati oleh Pak Bos.</footer>
+
+<script>
+// DATABASE: GABUNGAN BERITA TWS DAN TABLET
+const newsDatabase = [
+    { 
+        title: "Revolusi TWS 100 Ribuan? Review Jujur KiiP Wireless DTS16", 
+        link: "audio-080226.html", 
+        category: "Audio" 
+    },
+    { 
+        title: "Tablet Rasa Kertas? Review Huawei MatePad 11.5 PaperMatte", 
+        link: "tablet-080226.html", 
+        category: "Tablet" 
+    }
+];
+
+const officialCategories = ["Audio", "Smartphone", "Tablet", "Aksesoris", "Tips & Trik"];
+
+function updateSidebar() {
+    const catList = document.getElementById('categoryList'); catList.innerHTML = "";
+    officialCategories.forEach(cat => {
+        const count = newsDatabase.filter(n => n.category === cat).length;
+        if (count > 0) {
+            catList.innerHTML += `<li><a href="#">${cat} <span class="cat-count">${count}</span></a></li>`;
+        }
+    });
+
+    const page = window.location.pathname.split("/").pop() || "tablet-080226.html";
+    localStorage.setItem(page, (parseInt(localStorage.getItem(page)) || 0) + 1);
+
+    const popList = document.getElementById('popularNews'); popList.innerHTML = "";
+    newsDatabase.map(n => ({ ...n, v: parseInt(localStorage.getItem(n.link)) || 0 })).sort((a,b) => b.v - a.v).forEach(n => {
+        if(n.v > 0) popList.innerHTML += `<li><a href="${n.link}">${n.title}</a><br><small style="color:#64748b;">${n.v} Pembaca</small></li>`;
+    });
+}
+
+function searchNews() {
+    let input = document.getElementById('searchInput').value.toLowerCase();
+    let box = document.getElementById('searchSuggestions'); box.innerHTML = "";
+    if (input.length > 0) {
+        let matches = newsDatabase.filter(n => n.title.toLowerCase().includes(input));
+        if (matches.length > 0) {
+            box.style.display = "block";
+            matches.forEach(m => { box.innerHTML += `<a href="${m.link}" style="display:block; padding:10px; text-decoration:none; color:#333; font-size:0.85rem; border-bottom:1px solid #f1f5f9;">${m.title}</a>`; });
+        } else box.style.display = "none";
+    } else box.style.display = "none";
+}
+window.onload = updateSidebar;
+</script>
+</body>
+</html>
