@@ -3,12 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <title>Tech-no-Logy - Review Gadget Jujur & Terpercaya</title>
-    <meta name="description" content="Portal review gadget paling jujur untuk Guru, Mahasiswa, dan Pemula. Bahas TWS, Tablet, dan HP dengan bahasa manusia, bukan bahasa robot.">
-    <meta name="keywords" content="Review Gadget Jujur, Tech-no-Logy, Review TWS Murah, Huawei MatePad PaperMatte, Tablet Guru, Gadget Pendidikan">
-    <meta name="author" content="Pak Bos Tech-no-Logy">
-    <meta name="robots" content="index, follow">
+    <title>Tech-no-Logy - Home</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
     
     <style>
@@ -28,7 +23,7 @@
             text-align: center;
             border-bottom-left-radius: 30px;
             border-bottom-right-radius: 30px;
-            margin-bottom: -35px;
+            margin-bottom: -35px; /* Supaya kategori "numpang" di atas */
         }
         
         .hero-title { color: white; font-size: 2rem; margin-bottom: 20px; font-weight: 800; }
@@ -51,7 +46,7 @@
         }
         .main-search:focus { transform: scale(1.02); box-shadow: 0 15px 40px rgba(0,0,0,0.3); }
 
-        /* KATEGORI CHIPS */
+        /* KATEGORI CHIPS (TOMBOL BULAT) */
         .category-scroll {
             display: flex;
             justify-content: center;
@@ -78,6 +73,7 @@
 
         .cat-chip:hover { transform: translateY(-3px); }
         
+        /* State Aktif (Tombol yang sedang dipilih) */
         .cat-chip.active {
             background: var(--secondary);
             color: var(--dark);
@@ -105,7 +101,7 @@
             transition: 0.3s;
             display: flex;
             flex-direction: column;
-            text-decoration: none;
+            text-decoration: none; /* Supaya satu kartu bisa diklik */
         }
         .news-card:hover { transform: translateY(-5px); box-shadow: 0 15px 30px rgba(0,0,0,0.08); }
 
@@ -145,6 +141,7 @@
 
         footer { text-align: center; padding: 50px 20px; color: #94a3b8; font-size: 0.9rem; margin-top: 50px; border-top: 1px solid #e2e8f0; }
 
+        /* Animasi Muncul */
         .fade-in { animation: fadeIn 0.5s ease-in; }
         @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
 
@@ -177,6 +174,7 @@
 </footer>
 
 <script>
+    // 1. DATABASE BERITA (Pastikan Link Filenya Benar)
     const newsData = [
         {
             title: "Revolusi TWS 100 Ribuan? Review Jujur KiiP Wireless DTS16",
@@ -199,8 +197,9 @@
     const newsGrid = document.getElementById('newsGrid');
     let currentCategory = 'all';
 
+    // 2. FUNGSI TAMPILKAN KARTU BERITA
     function renderNews(data) {
-        newsGrid.innerHTML = '';
+        newsGrid.innerHTML = ''; // Bersihkan layar
         
         if(data.length === 0) {
             newsGrid.innerHTML = '<p style="text-align:center; width:100%; color:#94a3b8; grid-column: 1/-1; margin-top:30px;">Maaf Bos, artikel yang dicari belum ada.</p>';
@@ -208,6 +207,7 @@
         }
 
         data.forEach(item => {
+            // Membuat Kartu HTML
             const card = `
                 <a href="${item.link}" class="news-card fade-in">
                     <div class="card-img" style="background: ${item.color}">
@@ -225,11 +225,15 @@
         });
     }
 
+    // 3. FUNGSI KLIK TOMBOL KATEGORI
     function filterCategory(cat, btnElement) {
         currentCategory = cat;
+        
+        // Atur warna tombol aktif
         document.querySelectorAll('.cat-chip').forEach(btn => btn.classList.remove('active'));
         btnElement.classList.add('active');
 
+        // Filter datanya
         if (cat === 'all') {
             renderNews(newsData);
         } else {
@@ -238,6 +242,7 @@
         }
     }
 
+    // 4. FUNGSI KETIK SEARCH
     function filterNews() {
         const query = document.getElementById('searchInput').value.toLowerCase();
         
@@ -250,6 +255,7 @@
         renderNews(filtered);
     }
 
+    // Jalankan saat pertama kali dibuka
     window.onload = () => renderNews(newsData);
 </script>
 
