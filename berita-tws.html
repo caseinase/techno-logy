@@ -6,47 +6,65 @@
     <title>Review KiiP DTS16 - Tech-no-Logy</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
-        :root { --primary: #004a99; --secondary: #00d4ff; --dark: #0f172a; --text: #334155; --danger: #e11d48; --success: #10b981; }
+        :root { --primary: #004a99; --secondary: #00d4ff; --dark: #0f172a; --text: #334155; --danger: #e11d48; --success: #10b981; --border: #e2e8f0; }
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Inter', sans-serif; background-color: #f8fafc; color: var(--text); line-height: 1.8; }
+        body { font-family: 'Inter', sans-serif; background-color: #f1f5f9; color: var(--text); line-height: 1.8; }
         
-        nav { background: var(--primary); color: white; padding: 15px 5%; display: flex; justify-content: space-between; position: sticky; top: 0; z-index: 1000; }
+        nav { background: var(--primary); color: white; padding: 15px 5%; display: flex; justify-content: space-between; position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
         .logo { font-weight: bold; text-decoration: none; color: white; font-size: 1.2rem; }
         .back-link { color: white; text-decoration: none; font-size: 0.8rem; border: 1px solid white; padding: 5px 15px; border-radius: 6px; }
 
-        .container { max-width: 850px; margin: 40px auto; padding: 0 25px; background: white; border-radius: 24px; box-shadow: 0 10px 40px rgba(0,0,0,0.04); }
+        .main-wrapper { max-width: 1200px; margin: 30px auto; display: grid; grid-template-columns: 1fr 350px; gap: 30px; padding: 0 20px; }
+
+        /* Main Content Style */
+        .container { background: white; border-radius: 20px; box-shadow: 0 4px 20px rgba(0,0,0,0.05); overflow: hidden; }
         .content { padding: 40px; }
-        
         .badge { background: #fee2e2; color: #991b1b; padding: 6px 16px; border-radius: 30px; font-weight: 700; font-size: 0.75rem; text-transform: uppercase; }
         h1 { color: var(--dark); font-size: 2.2rem; line-height: 1.2; margin: 20px 0; letter-spacing: -1px; }
         .meta { color: #94a3b8; font-size: 0.9rem; margin-bottom: 30px; border-bottom: 1px solid #f1f5f9; padding-bottom: 20px; }
-
-        h2 { color: var(--primary); margin: 35px 0 15px; font-size: 1.5rem; font-weight: 700; border-left: 5px solid var(--secondary); padding-left: 15px; }
-        p { margin-bottom: 20px; text-align: justify; }
-
-        /* Review Section */
-        .review-point { margin-bottom: 30px; }
-        .review-point strong { color: var(--dark); display: block; margin-bottom: 5px; font-size: 1.1rem; }
-
-        /* Smart Screen Box */
-        .smart-box { background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); color: white; padding: 30px; border-radius: 20px; margin: 25px 0; }
-        .grid-features { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 12px; }
-        .f-item { background: rgba(255,255,255,0.08); padding: 12px; border-radius: 12px; text-align: center; font-size: 0.85rem; border: 1px solid rgba(255,255,255,0.1); }
-
-        /* Target User */
-        .target-box { background: #f0f9ff; border: 1px solid #bae6fd; padding: 25px; border-radius: 20px; margin: 35px 0; }
         
-        /* Pros & Cons */
+        /* Sidebar Style */
+        .sidebar { display: flex; flex-direction: column; gap: 30px; }
+        .sidebar-widget { background: white; padding: 25px; border-radius: 20px; box-shadow: 0 4px 20px rgba(0,0,0,0.05); }
+        .widget-title { font-size: 1.1rem; font-weight: 700; color: var(--dark); margin-bottom: 15px; padding-bottom: 10px; border-bottom: 2px solid var(--secondary); display: inline-block; }
+        
+        /* Search Widget */
+        .search-box { display: flex; gap: 5px; }
+        .search-box input { flex: 1; padding: 10px; border: 1px solid var(--border); border-radius: 8px; font-size: 0.9rem; }
+        .search-box button { background: var(--primary); color: white; border: none; padding: 0 15px; border-radius: 8px; cursor: pointer; }
+
+        /* List Widget */
+        .hotline-list, .category-list { list-style: none; }
+        .hotline-list li { margin-bottom: 15px; border-bottom: 1px solid #f1f5f9; padding-bottom: 10px; }
+        .hotline-list li:last-child { border: none; }
+        .hotline-list a { text-decoration: none; color: var(--dark); font-size: 0.9rem; font-weight: 600; transition: 0.3s; }
+        .hotline-list a:hover { color: var(--primary); }
+        .hotline-list small { display: block; color: #94a3b8; font-size: 0.75rem; margin-top: 4px; }
+
+        .category-list li { margin-bottom: 10px; }
+        .category-list a { text-decoration: none; color: var(--text); font-size: 0.9rem; display: flex; justify-content: space-between; align-items: center; padding: 8px 12px; border-radius: 8px; background: #f8fafc; transition: 0.3s; }
+        .category-list a:hover { background: var(--primary); color: white; }
+        .cat-count { font-size: 0.75rem; background: #cbd5e1; color: var(--dark); padding: 2px 8px; border-radius: 10px; }
+
+        /* Feature Box */
+        .smart-box { background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); color: white; padding: 30px; border-radius: 20px; margin: 25px 0; }
+        .grid-features { display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 12px; }
+        .f-item { background: rgba(255,255,255,0.08); padding: 12px; border-radius: 12px; text-align: center; font-size: 0.8rem; border: 1px solid rgba(255,255,255,0.1); }
+
+        .review-point { margin-bottom: 30px; }
+        .target-box { background: #f0f9ff; border: 1px solid #bae6fd; padding: 25px; border-radius: 20px; margin: 35px 0; }
         .pc-container { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin: 30px 0; }
         .pc-box { padding: 20px; border-radius: 16px; font-size: 0.9rem; }
         .pros { background: #f0fdf4; border: 1px solid #bbf7d0; }
         .cons { background: #fff1f2; border: 1px solid #fecdd3; }
 
-        .cta-price { text-align: center; background: #ee4d2d; color: white; padding: 40px; border-radius: 20px; margin-top: 50px; }
-        .price-val { font-size: 2.8rem; font-weight: 800; display: block; margin: 10px 0; }
+        .cta-price { text-align: center; background: #ee4d2d; color: white; padding: 30px; border-radius: 20px; margin-top: 50px; }
+        .price-val { font-size: 2.5rem; font-weight: 800; display: block; margin: 5px 0; }
         .btn-link { display: inline-block; background: white; color: #ee4d2d; padding: 12px 35px; border-radius: 10px; text-decoration: none; font-weight: 700; margin-top: 15px; }
 
-        footer { text-align: center; padding: 40px; color: #94a3b8; font-size: 0.8rem; }
+        footer { text-align: center; padding: 40px; color: #94a3b8; font-size: 0.8rem; background: #fff; margin-top: 50px; border-top: 1px solid var(--border); }
+
+        @media (max-width: 992px) { .main-wrapper { grid-template-columns: 1fr; } .sidebar { order: 2; } }
     </style>
 </head>
 <body>
@@ -56,81 +74,127 @@
     <a href="index.html" class="back-link">Kembali</a>
 </nav>
 
-<div class="container">
-    <div class="content">
-        <span class="badge">Review Mendalam</span>
-        <h1>TWS 100 Ribuan Punya Layar Sentuh? Review KiiP Wireless DTS16: Si Perusak Harga Pasar!</h1>
-        <div class="meta">Oleh: Lab Tech-no-Logy | Berita & Review Berdasarkan Data Februari 2026</div>
+<div class="main-wrapper">
+    <div class="container">
+        <div class="content">
+            <span class="badge">Review Mendalam</span>
+            <h1>TWS 100 Ribuan Punya Layar Sentuh? Review KiiP Wireless DTS16: Si Perusak Harga Pasar!</h1>
+            <div class="meta">Oleh: Lab Tech-no-Logy | Februari 2026</div>
 
-        <p>Di harga <strong>Rp 165.000</strong>, <strong>KiiP Wireless DTS16</strong> menawarkan fitur yang biasanya hanya ada di produk jutaan: sebuah layar sentuh pintar di casenya. Kami telah menguji setiap aspeknya untuk membantu Anda memutuskan apakah TWS ini layak dibeli.</p>
+            <p>Di harga <strong>Rp 165.000</strong>, <strong>KiiP Wireless DTS16</strong> menawarkan fitur yang biasanya hanya ada di produk jutaan: sebuah layar sentuh pintar di casenya. Kami telah menguji setiap aspeknya untuk membantu Anda memutuskan apakah TWS ini layak dibeli.</p>
 
-        <div class="smart-box">
-            <h3 style="color: var(--secondary); margin-bottom: 15px;">✨ Fitur Smart Screen Case</h3>
-            <div class="grid-features">
-                <div class="f-item">🎵 Kontrol Musik</div>
-                <div class="f-item">🎭 5 Mode EQ</div>
-                <div class="f-item">📸 Remote Kamera</div>
-                <div class="f-item">🔍 Find Earbuds</div>
-                <div class="f-item">🔋 Cek Baterai</div>
-                <div class="f-item">⏰ Jam & Timer</div>
+            <div class="smart-box">
+                <h3 style="color: var(--secondary); margin-bottom: 15px;">✨ Fitur Smart Screen Case</h3>
+                <div class="grid-features">
+                    <div class="f-item">🎵 Musik</div>
+                    <div class="f-item">🎭 EQ</div>
+                    <div class="f-item">📸 Kamera</div>
+                    <div class="f-item">🔍 Find</div>
+                    <div class="f-item">🔋 Baterai</div>
+                    <div class="f-item">⏰ Jam</div>
+                </div>
             </div>
-        </div>
 
-        <h2>Bedah Kualitas KiiP DTS16</h2>
-
-        <div class="review-point">
-            <strong>1. Desain & Build Quality</strong>
-            <p>Secara estetika, TWS ini terlihat sangat futuristik berkat layar LCD di bagian depan case. Namun secara <em>build quality</em>, material plastiknya terasa sangat ringan (berat total 66 gram). Meski desain in-ear-nya ergonomis, engsel casenya terasa sedikit standar—perlu kehati-hatian ekstra agar tetap awet dalam jangka panjang.</p>
-        </div>
-
-        <div class="review-point">
-            <strong>2. Kualitas Suara (Audio)</strong>
-            <p>Mengandalkan driver 13mm, suara yang dihasilkan cukup berimbang. Bassnya terasa <em>punchy</em> tapi tidak terlalu dalam. Untuk pendengar musik pop atau podcast, kualitasnya sudah sangat mumpuni. Sayangnya, pada volume maksimal (100%), terkadang suara frekuensi tinggi (treble) terasa sedikit tajam di telinga.</p>
-        </div>
-
-        <div class="review-point">
-            <strong>3. Konektivitas</strong>
-            <p>Berkat <strong>Bluetooth V5.4</strong>, proses <em>pairing</em> sangat cepat dan stabil. Kami tidak menemukan kendala putus nyambung saat smartphone berada di saku atau tas. Latensinya pun cukup rendah untuk menonton video tanpa delay yang mengganggu.</p>
-        </div>
-
-        <div class="review-point">
-            <strong>4. Kualitas Mic & ENC</strong>
-            <p>Fitur <strong>ENC (Environmental Noise Cancelling)</strong> bekerja cukup baik untuk menyaring suara angin saat di luar ruangan. Namun, suara mic terdengar sedikit agak "tipis" atau seperti di dalam ruang tertutup. Masih sangat layak untuk telepon harian, tapi mungkin kurang optimal untuk rekaman konten profesional.</p>
-        </div>
-
-        <h2>🎯 Siapa yang Cocok Membeli Ini?</h2>
-        <div class="target-box">
-            <p>TWS ini sangat cocok bagi <strong>Pelajar, Mahasiswa, atau Pencari Gadget Unik</strong> yang mengutamakan gaya dan kemudahan kontrol tanpa harus selalu membuka smartphone. Jika Anda butuh TWS fungsional dengan tampilan "wah" di harga hemat, inilah pilihannya.</p>
-        </div>
-
-        <h2>Kesimpulan: Kelebihan & Kekurangan</h2>
-        <div class="pc-container">
-            <div class="pc-box pros">
-                <h4 style="color: var(--success);">✅ Kelebihan</h4>
-                <ul style="padding-left: 15px; font-size: 0.85rem;">
-                    <li>Layar LCD pertama di kelasnya</li>
-                    <li>Koneksi Bluetooth 5.4 sangat stabil</li>
-                    <li>Harga sangat terjangkau (Rp 165rb)</li>
-                    <li>Fitur Remote Kamera sangat praktis</li>
-                </ul>
+            <div class="review-point">
+                <strong>1. Desain & Build Quality</strong>
+                <p>Secara estetika, TWS ini futuristik berkat layar LCD-nya. Namun, material plastik terasa ringan (66g). Engsel case standar, jadi harap hati-hati saat menutup agar awet jangka panjang.</p>
             </div>
-            <div class="pc-box cons">
-                <h4 style="color: var(--danger);">❌ Kekurangan</h4>
-                <ul style="padding-left: 15px; font-size: 0.85rem;">
-                    <li>Bahan plastik terasa ringan/ringkih</li>
-                    <li>Transisi layar tidak terlalu mulus</li>
-                    <li>Baterai hanya bertahan 4.5 jam</li>
-                    <li>Audio pada volume tinggi agak tajam</li>
-                </ul>
-            </div>
-        </div>
 
-        <div class="cta-price">
-            <p>Harga Penawaran Terbaik</p>
-            <span class="price-val">Rp 165.000</span>
-            <a href="#" class="btn-link">Beli di Toko Resmi</a>
+            <div class="review-point">
+                <strong>2. Kualitas Suara (Audio)</strong>
+                <p>Driver 13mm memberikan audio berimbang. Bass punchy namun tidak terlalu dalam. Cocok untuk pop. Volume 100% terkadang membuat treble terasa sedikit tajam.</p>
+            </div>
+
+            <div class="review-point">
+                <strong>3. Konektivitas & Mic</strong>
+                <p>Bluetooth V5.4 sangat stabil. ENC bekerja lumayan menyaring angin, meski mic terdengar agak tipis. Masih sangat layak untuk telepon harian.</p>
+            </div>
+
+            <div class="target-box">
+                <p><strong>Siapa yang Cocok?</strong> Pelajar, Mahasiswa, atau pencari gadget unik yang ingin kontrol praktis tanpa buka smartphone.</p>
+            </div>
+
+            <div class="pc-container">
+                <div class="pc-box pros">
+                    <h4 style="color: var(--success);">✅ Kelebihan</h4>
+                    <ul style="padding-left: 15px; font-size: 0.8rem;">
+                        <li>Layar LCD Inovatif</li>
+                        <li>Bluetooth 5.4 Stabil</li>
+                        <li>Harga Rp 165rb</li>
+                    </ul>
+                </div>
+                <div class="pc-box cons">
+                    <h4 style="color: var(--danger);">❌ Kekurangan</h4>
+                    <ul style="padding-left: 15px; font-size: 0.8rem;">
+                        <li>Plastik agak ringkih</li>
+                        <li>Menu layar kaku</li>
+                        <li>Baterai 4.5 jam</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="cta-price">
+                <span class="price-val">Rp 165.000</span>
+                <a href="#" class="btn-link">Beli di Toko Resmi</a>
+            </div>
         </div>
     </div>
+
+    <aside class="sidebar">
+        <div class="sidebar-widget">
+            <h3 class="widget-title">Cari Berita</h3>
+            <div class="search-box">
+                <input type="text" placeholder="Cari gadget...">
+                <button>Cari</button>
+            </div>
+        </div>
+
+        <div class="sidebar-widget">
+            <h3 class="widget-title">Kategori</h3>
+            <ul class="category-list">
+                <li><a href="#">Audio <span class="cat-count">12</span></a></li>
+                <li><a href="#">Smartphone <span class="cat-count">8</span></a></li>
+                <li><a href="#">Tablet <span class="cat-count">5</span></a></li>
+                <li><a href="#">Aksesoris <span class="cat-count">15</span></a></li>
+            </ul>
+        </div>
+
+        <div class="sidebar-widget">
+            <h3 class="widget-title">Hotline Terkini</h3>
+            <ul class="hotline-list">
+                <li>
+                    <a href="#">Prediksi Harga iPhone 17 di Indonesia</a>
+                    <small>Baru saja</small>
+                </li>
+                <li>
+                    <a href="#">Huawei MatePad 11.5 2025: Apakah Worth It?</a>
+                    <small>2 jam yang lalu</small>
+                </li>
+                <li>
+                    <a href="#">TWS Noise Cancelling Terbaik di Bawah 500rb</a>
+                    <small>Hari ini</small>
+                </li>
+            </ul>
+        </div>
+
+        <div class="sidebar-widget">
+            <h3 class="widget-title">Paling Banyak Dibaca</h3>
+            <ul class="hotline-list">
+                <li>
+                    <a href="#">Cara Cek STNK dan BPKB Motor Baru</a>
+                    <small>15k pembaca</small>
+                </li>
+                <li>
+                    <a href="#">Review Jujur Honda PCX 160 Terbaru</a>
+                    <small>12k pembaca</small>
+                </li>
+                <li>
+                    <a href="#">Tips Menghemat Listrik di Toko Kelontong</a>
+                    <small>10k pembaca</small>
+                </li>
+            </ul>
+        </div>
+    </aside>
 </div>
 
 <footer>
