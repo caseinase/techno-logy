@@ -4,15 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Review KiiP DTS16 - Tech-no-Logy</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Open+Sans:wght@700&family=Roboto:wght@500&display=swap" rel="stylesheet">
     
     <style>
         :root { --primary: #004a99; --secondary: #00d4ff; --dark: #0f172a; --text: #334155; --bg: #f8fafc; --border: #e2e8f0; }
         
-        /* Warna Brand E-Commerce */
-        --shopee: #ee4d2d; 
-        --tokopedia: #42b549; 
-        --tiktok: #000000;
+        /* Warna Brand E-Commerce (Akurat) */
+        --shopee-color: #ee4d2d; 
+        --tokopedia-color: #03AC0E; 
+        --tiktok-color: #000000;
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: 'Inter', sans-serif; background-color: var(--bg); color: var(--text); line-height: 1.6; }
@@ -50,25 +50,44 @@
         .cons { background: #fff1f2; border: 1px solid #fecdd3; }
         .pc-box ul { padding-left: 20px; margin-top: 10px; }
 
-        /* TOMBOL BELI (E-COMMERCE) */
+        /* TOMBOL BELI (E-COMMERCE) - TEXT ONLY, BRAND COLORS */
         .buy-section { background: #fff; border: 2px solid var(--border); border-radius: 20px; padding: 30px; text-align: center; margin-top: 40px; }
         .price-tag { font-size: 2.5rem; font-weight: 800; color: var(--dark); display: block; margin-bottom: 5px; }
         .price-sub { color: #64748b; margin-bottom: 25px; display: block; font-size: 0.9rem; }
         
-        .ecommerce-buttons { display: flex; flex-direction: column; gap: 10px; max-width: 100%; margin: 0 auto; }
+        .ecommerce-buttons { display: flex; flex-direction: column; gap: 12px; max-width: 100%; margin: 0 auto; }
+        
         .btn-shop { 
-            display: flex; align-items: center; justify-content: center; gap: 10px; 
-            padding: 12px; border-radius: 10px; text-decoration: none; 
-            font-weight: 700; transition: transform 0.2s; font-size: 1rem;
-            color: white; border: none;
+            display: block; width: 100%; padding: 14px; border-radius: 8px; 
+            text-decoration: none; color: white; transition: transform 0.2s, box-shadow 0.2s; 
+            text-align: center; border: none;
         }
-        .btn-shop:hover { transform: translateY(-2px); opacity: 0.9; }
-        .btn-shop svg { width: 20px; height: 20px; fill: white; }
+        .btn-shop:hover { transform: translateY(-2px); box-shadow: 0 5px 15px rgba(0,0,0,0.1); opacity: 0.95; }
 
-        /* Warna Tombol */
-        .btn-tiktok { background-color: var(--tiktok); }
-        .btn-tokopedia { background-color: var(--tokopedia); }
-        .btn-shopee { background-color: var(--shopee); }
+        /* GAYA KHUSUS TIKTOK SHOP */
+        .btn-tiktok { 
+            background-color: var(--tiktok-color); 
+            font-family: 'Inter', sans-serif; /* Font tegas */
+            font-weight: 800; 
+            font-size: 1.1rem;
+            letter-spacing: 0.5px;
+        }
+
+        /* GAYA KHUSUS TOKOPEDIA */
+        .btn-tokopedia { 
+            background-color: var(--tokopedia-color); 
+            font-family: 'Open Sans', sans-serif; /* Font khas Tokped */
+            font-weight: 700;
+            font-size: 1.05rem;
+        }
+
+        /* GAYA KHUSUS SHOPEE */
+        .btn-shopee { 
+            background-color: var(--shopee-color); 
+            font-family: 'Roboto', sans-serif; /* Font standar Shopee */
+            font-weight: 500;
+            font-size: 1.05rem;
+        }
 
         /* SIDEBAR */
         .sidebar-widget { background: white; padding: 25px; border-radius: 20px; box-shadow: 0 4px 10px rgba(0,0,0,0.03); margin-bottom: 25px; border: 1px solid var(--border); }
@@ -106,7 +125,7 @@
             /* Pro Kontra jadi atas-bawah, bukan kiri-kanan */
             .pc-container { grid-template-columns: 1fr; gap: 15px; }
             
-            /* Tombol beli full width */
+            /* Tombol beli menyesuaikan */
             .ecommerce-buttons { width: 100%; }
         }
     </style>
@@ -177,15 +196,14 @@
                 
                 <div class="ecommerce-buttons">
                     <a href="https://vt.tokopedia.com/t/ZS9Jj33qpvfps-53fFv/" target="_blank" class="btn-shop btn-tiktok">
-                        <svg viewBox="0 0 448 512"><path d="M448 209.91a210.06 210.06 0 0 1-122.77-39.25V349.38A162.55 162.55 0 1 1 185 188.31V278.2a74.62 74.62 0 1 0 52.23 71.18V0l88 0a121.18 121.18 0 0 0 1.86 22.17h0A122.18 122.18 0 0 0 381 102.39a121.43 121.43 0 0 0 67 20.14z"/></svg>
                         Beli di TikTok Shop
                     </a>
+                    
                     <a href="https://tk.tokopedia.com/ZSao7TgMK/" target="_blank" class="btn-shop btn-tokopedia">
-                        <svg viewBox="0 0 24 24"><path d="M12 0a12 12 0 1 0 12 12A12 12 0 0 0 12 0zM12 21.6a9.6 9.6 0 1 1 9.6-9.6 9.6 9.6 0 0 1-9.6 9.6zM12 4.8a7.2 7.2 0 1 0 7.2 7.2 7.2 7.2 0 0 0-7.2-7.2zM12 16.8a4.8 4.8 0 1 1 4.8-4.8 4.8 4.8 0 0 1-4.8 4.8z"/></svg>
                         Beli di Tokopedia
                     </a>
+                    
                     <a href="https://id.shp.ee/QZQPdgR" target="_blank" class="btn-shop btn-shopee">
-                        <svg viewBox="0 0 24 24"><path d="M21.12 5.28h-3.6a5.52 5.52 0 0 0-11.04 0H2.88a2.4 2.4 0 0 0-2.4 2.4v11.04a2.4 2.4 0 0 0 2.4 2.4h18.24a2.4 2.4 0 0 0 2.4-2.4V7.68a2.4 2.4 0 0 0-2.4-2.4zm-10.56 0a3.12 3.12 0 0 1 6.24 0zm10.56 13.44H2.88V7.68h3.6v1.92a.96.96 0 1 0 1.92 0V7.68h7.2v1.92a.96.96 0 1 0 1.92 0V7.68h3.6z"/></svg>
                         Beli di Shopee
                     </a>
                 </div>
